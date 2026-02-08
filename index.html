@@ -44,19 +44,18 @@
     <div class="fixed top-4 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
       <div class="pointer-events-auto w-full max-w-[960px] bg-white/90 dark:bg-[#102216]/90 backdrop-blur-md border border-[#e7f3eb] dark:border-[#2bee6c]/20 shadow-xl shadow-black/5 rounded-full px-6 py-3 transition-all">
         <header class="flex w-full items-center justify-between whitespace-nowrap">
-          <a href="index.html" class="flex items-center gap-1 no-underline">
+          <a href="./" class="flex items-center gap-1 no-underline">
             <img src="assets/full-logo.png" alt="Fuwalief" class="h-8" />
           </a>
           <div class="flex flex-1 justify-end gap-8">
             <div class="hidden md:flex items-center gap-9">
-              <a class="text-sm font-bold leading-normal text-primary transition-colors" href="index.html">Home</a>
-              <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200" href="#mission">Mission</a>
-              <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200" href="#values">Values</a>
-              <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200" href="products.html">Products</a>
-              <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200" href="#company">Company</a>
+              <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200" href="./">ホーム</a>
+              <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200" href="#mission">ミッション</a>
+              <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200" href="products.html">プロダクト</a>
+              <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200" href="#company">会社概要</a>
             </div>
             <button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary text-[#0d1b12] text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
-              <span class="truncate">Contact Us</span>
+              <span class="truncate">お問い合わせ</span>
             </button>
           </div>
         </header>
@@ -171,27 +170,15 @@
           <dl class="divide-y divide-[#e7f3eb] dark:divide-[#2bee6c]/10 bg-background-light dark:bg-background-dark">
             <div class="px-6 py-6 sm:grid sm:grid-cols-3 sm:gap-4 hover:bg-white dark:hover:bg-[#1a3525] transition-colors">
               <dt class="text-sm font-bold text-[#0d1b12] dark:text-primary">会社名</dt>
-              <dd class="mt-1 text-sm text-[#0d1b12] dark:text-white sm:col-span-2 sm:mt-0">株式会社 Fuwalief (Fuwalief Co., Ltd.)</dd>
+              <dd class="mt-1 text-sm text-[#0d1b12] dark:text-white sm:col-span-2 sm:mt-0">株式会社 Fuwalief（法人登記準備中）</dd>
             </div>
             <div class="px-6 py-6 sm:grid sm:grid-cols-3 sm:gap-4 hover:bg-white dark:hover:bg-[#1a3525] transition-colors">
-              <dt class="text-sm font-bold text-[#0d1b12] dark:text-primary">代表取締役</dt>
-              <dd class="mt-1 text-sm text-[#0d1b12] dark:text-white sm:col-span-2 sm:mt-0">山田 太郎</dd>
-            </div>
-            <div class="px-6 py-6 sm:grid sm:grid-cols-3 sm:gap-4 hover:bg-white dark:hover:bg-[#1a3525] transition-colors">
-              <dt class="text-sm font-bold text-[#0d1b12] dark:text-primary">設立</dt>
-              <dd class="mt-1 text-sm text-[#0d1b12] dark:text-white sm:col-span-2 sm:mt-0">2023年 10月 10日</dd>
-            </div>
-            <div class="px-6 py-6 sm:grid sm:grid-cols-3 sm:gap-4 hover:bg-white dark:hover:bg-[#1a3525] transition-colors">
-              <dt class="text-sm font-bold text-[#0d1b12] dark:text-primary">所在地</dt>
-              <dd class="mt-1 text-sm text-[#0d1b12] dark:text-white sm:col-span-2 sm:mt-0">〒150-0001 東京都渋谷区神宮前 1-1-1</dd>
+              <dt class="text-sm font-bold text-[#0d1b12] dark:text-primary">代表</dt>
+              <dd class="mt-1 text-sm text-[#0d1b12] dark:text-white sm:col-span-2 sm:mt-0">田中 陽祐</dd>
             </div>
             <div class="px-6 py-6 sm:grid sm:grid-cols-3 sm:gap-4 hover:bg-white dark:hover:bg-[#1a3525] transition-colors">
               <dt class="text-sm font-bold text-[#0d1b12] dark:text-primary">事業内容</dt>
-              <dd class="mt-1 text-sm text-[#0d1b12] dark:text-white sm:col-span-2 sm:mt-0">
-                デジタルウェルビーイング事業<br />
-                アプリケーション開発・運営<br />
-                コンサルティングサービス
-              </dd>
+              <dd class="mt-1 text-sm text-[#0d1b12] dark:text-white sm:col-span-2 sm:mt-0">アプリケーション開発・運営</dd>
             </div>
           </dl>
         </div>
@@ -223,7 +210,7 @@
               </div>
               <div class="flex flex-col gap-2">
                 <label class="text-sm font-bold text-[#0d1b12] dark:text-white ml-1" for="message">お問い合わせ内容</label>
-                <textarea class="w-full rounded-xl border border-[#cfe7d7] dark:border-[#2bee6c]/30 bg-[#f9fbf9] dark:bg-[#1a3525] p-4 text-[#0d1b12] dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all placeholder:text-gray-400 resize-none" id="message" name="message" placeholder="ご自由にご記入ください" rows="4" required></textarea>
+                <textarea class="w-full rounded-xl border border-[#cfe7d7] dark:border-[#2bee6c]/30 bg-[#f9fbf9] dark:bg-[#1a3525] p-4 text-[#0d1b12] dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all placeholder:text-gray-400 resize-none min-h-[160px]" id="message" name="message" placeholder="ご自由にご記入ください" rows="8" required oninput="this.style.height='auto';this.style.height=this.scrollHeight+'px'"></textarea>
               </div>
               <button id="submit-btn" class="mt-4 w-full flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 bg-primary text-[#0d1b12] text-base font-bold hover:shadow-lg hover:shadow-primary/30 hover:opacity-95 transition-all" type="submit">
                 送信する
@@ -263,7 +250,7 @@
     <footer class="bg-background-light dark:bg-background-dark border-t border-[#e7f3eb] dark:border-[#1e3a29] py-12">
       <div class="px-4 md:px-10 lg:px-40 flex justify-center">
         <div class="flex flex-col items-center gap-6 text-center max-w-[960px] w-full">
-          <a href="index.html" class="flex items-center">
+          <a href="./" class="flex items-center">
             <img src="assets/full-logo.png" alt="Fuwalief" class="h-7" />
           </a>
           <div class="flex gap-6 text-sm text-gray-600 dark:text-gray-400">
