@@ -5,6 +5,7 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>Fuwalief - 優しいテクノロジーで不安を取り除く</title>
   <meta name="description" content="Fuwaliefは、デジタルウェルビーイングを通じて、あなたの日常に安らぎをお届けします。" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -43,12 +44,9 @@
     <div class="fixed top-4 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
       <div class="pointer-events-auto w-full max-w-[960px] bg-white/90 dark:bg-[#102216]/90 backdrop-blur-md border border-[#e7f3eb] dark:border-[#2bee6c]/20 shadow-xl shadow-black/5 rounded-full px-6 py-3 transition-all">
         <header class="flex w-full items-center justify-between whitespace-nowrap">
-          <div class="flex items-center gap-4">
-            <div class="text-primary">
-              <span class="material-symbols-outlined text-4xl">spa</span>
-            </div>
-            <h2 class="text-lg font-bold leading-tight tracking-[-0.015em] dark:text-white">Fuwalief</h2>
-          </div>
+          <a href="index.html" class="flex items-center gap-1 no-underline">
+            <img src="assets/full-logo.png" alt="Fuwalief" class="h-8" />
+          </a>
           <div class="flex flex-1 justify-end gap-8">
             <div class="hidden md:flex items-center gap-9">
               <a class="text-sm font-bold leading-normal text-primary transition-colors" href="index.html">Home</a>
@@ -214,24 +212,49 @@
             </p>
           </div>
           <div class="w-full max-w-[600px] bg-white dark:bg-[#152b1d] p-8 md:p-12 rounded-3xl border border-[#e7f3eb] dark:border-[#2bee6c]/20 shadow-sm">
-            <form class="flex flex-col gap-6">
+            <form id="contact-form" class="flex flex-col gap-6">
               <div class="flex flex-col gap-2">
                 <label class="text-sm font-bold text-[#0d1b12] dark:text-white ml-1" for="name">お名前</label>
-                <input class="w-full h-12 rounded-xl border border-[#cfe7d7] dark:border-[#2bee6c]/30 bg-[#f9fbf9] dark:bg-[#1a3525] px-4 text-[#0d1b12] dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all placeholder:text-gray-400" id="name" placeholder="山田 太郎" type="text" />
+                <input class="w-full h-12 rounded-xl border border-[#cfe7d7] dark:border-[#2bee6c]/30 bg-[#f9fbf9] dark:bg-[#1a3525] px-4 text-[#0d1b12] dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all placeholder:text-gray-400" id="name" name="name" placeholder="山田 太郎" type="text" required />
               </div>
               <div class="flex flex-col gap-2">
                 <label class="text-sm font-bold text-[#0d1b12] dark:text-white ml-1" for="email">メールアドレス</label>
-                <input class="w-full h-12 rounded-xl border border-[#cfe7d7] dark:border-[#2bee6c]/30 bg-[#f9fbf9] dark:bg-[#1a3525] px-4 text-[#0d1b12] dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all placeholder:text-gray-400" id="email" placeholder="hello@fuwalief.com" type="email" />
+                <input class="w-full h-12 rounded-xl border border-[#cfe7d7] dark:border-[#2bee6c]/30 bg-[#f9fbf9] dark:bg-[#1a3525] px-4 text-[#0d1b12] dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all placeholder:text-gray-400" id="email" name="email" placeholder="hello@fuwalief.com" type="email" required />
               </div>
               <div class="flex flex-col gap-2">
                 <label class="text-sm font-bold text-[#0d1b12] dark:text-white ml-1" for="message">お問い合わせ内容</label>
-                <textarea class="w-full rounded-xl border border-[#cfe7d7] dark:border-[#2bee6c]/30 bg-[#f9fbf9] dark:bg-[#1a3525] p-4 text-[#0d1b12] dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all placeholder:text-gray-400 resize-none" id="message" placeholder="ご自由にご記入ください" rows="4"></textarea>
+                <textarea class="w-full rounded-xl border border-[#cfe7d7] dark:border-[#2bee6c]/30 bg-[#f9fbf9] dark:bg-[#1a3525] p-4 text-[#0d1b12] dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all placeholder:text-gray-400 resize-none" id="message" name="message" placeholder="ご自由にご記入ください" rows="4" required></textarea>
               </div>
-              <button class="mt-4 w-full flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 bg-primary text-[#0d1b12] text-base font-bold hover:shadow-lg hover:shadow-primary/30 hover:opacity-95 transition-all" type="button">
+              <button id="submit-btn" class="mt-4 w-full flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 bg-primary text-[#0d1b12] text-base font-bold hover:shadow-lg hover:shadow-primary/30 hover:opacity-95 transition-all" type="submit">
                 送信する
               </button>
+              <p id="form-status" class="text-center text-sm hidden"></p>
             </form>
           </div>
+          <script>
+            const GAS_URL = "https://script.google.com/macros/s/AKfycbweVi4nb2yDc5KUHVjqtwkWOBTf6ODyHPwIwMoynVrNnhG2Zkm72CIj7vpxNoQhRT3G/exec";
+            document.getElementById("contact-form").addEventListener("submit", async function(e) {
+              e.preventDefault();
+              const btn = document.getElementById("submit-btn");
+              const status = document.getElementById("form-status");
+              const form = this;
+              btn.disabled = true;
+              btn.textContent = "送信中...";
+              status.classList.add("hidden");
+              try {
+                const data = { name: form.name.value, email: form.email.value, message: form.message.value };
+                await fetch(GAS_URL, { method: "POST", mode: "no-cors", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) });
+                status.textContent = "送信が完了しました。ありがとうございます。";
+                status.className = "text-center text-sm text-primary";
+                form.reset();
+              } catch {
+                status.textContent = "送信に失敗しました。時間をおいて再度お試しください。";
+                status.className = "text-center text-sm text-red-500";
+              }
+              btn.disabled = false;
+              btn.textContent = "送信する";
+            });
+          </script>
         </div>
       </div>
     </div>
@@ -240,10 +263,9 @@
     <footer class="bg-background-light dark:bg-background-dark border-t border-[#e7f3eb] dark:border-[#1e3a29] py-12">
       <div class="px-4 md:px-10 lg:px-40 flex justify-center">
         <div class="flex flex-col items-center gap-6 text-center max-w-[960px] w-full">
-          <div class="flex items-center gap-2 text-[#0d1b12] dark:text-white">
-            <span class="material-symbols-outlined text-primary">spa</span>
-            <span class="text-lg font-bold">Fuwalief</span>
-          </div>
+          <a href="index.html" class="flex items-center">
+            <img src="assets/full-logo.png" alt="Fuwalief" class="h-7" />
+          </a>
           <div class="flex gap-6 text-sm text-gray-600 dark:text-gray-400">
             <a class="hover:text-primary transition-colors" href="#">プライバシーポリシー</a>
             <a class="hover:text-primary transition-colors" href="#">利用規約</a>
