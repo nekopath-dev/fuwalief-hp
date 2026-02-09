@@ -11,9 +11,12 @@ Fuwalief（法人登記準備中）のコーポレートサイト。GitHub Pages
 
 ## サイト構成
 - `index.html` - ホームページ（Hero / Mission / Values / Company Profile / Contact）
-- `products.html` - プロダクトページ（現在は「鋭意制作中」のみ表示）
-- `privacy.html` - プライバシーポリシー
-- `terms.html` - 利用規約
+- `products.html` - プロダクト一覧ページ（Irodoriカード等）
+- `irodori.html` - Irodori プロダクト紹介ページ
+- `irodori-privacy.html` - Irodori プライバシーポリシー
+- `irodori-terms.html` - Irodori 利用規約
+- `privacy.html` - プライバシーポリシー（会社全体）
+- `terms.html` - 利用規約（会社全体）
 - `assets/logo.png` - ファビコン用アイコン（四つ葉のクローバー）
 - `assets/full-logo.png` - ヘッダー・フッター用ロゴ（アイコン＋文字）
 
@@ -50,8 +53,11 @@ Fuwalief（法人登記準備中）のコーポレートサイト。GitHub Pages
 - [x] 全ページ総点検（リンク形式統一、head統一、Tailwind設定統一、button→a変換、タグ色統一）
 - [x] products.html を「鋭意制作中」ページに変更
 - [x] Hero見出しのモバイル改行修正（text-3xl化・sm以上で改行）
+- [x] products.html をプロダクト一覧ページに変更（Irodoriカード追加）
+- [x] irodori.html（プロダクト紹介ページ）作成
+- [x] irodori-privacy.html（Irodoriプライバシーポリシー 全14条）作成
+- [x] irodori-terms.html（Irodori利用規約 全17条）作成
 
 ### 要対応
 - [ ] OGPメタタグの追加（OGP画像の用意後）
 - [ ] フォーム送信テスト・動作確認
-- [ ] products.html にプロダクト一覧を復活（プロダクト完成後）

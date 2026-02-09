@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html class="light" lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Irodori プライバシーポリシー - Fuwalief</title>
+  <meta name="description" content="Irodori（AI壁紙生成アプリ）のプライバシーポリシーについてご説明します。" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#2bee6c",
+            "primary-hover": "#25d05e",
+            "background-light": "#f6f8f6",
+            "background-dark": "#102216",
+            "text-main": "#0d1b12",
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans", "Noto Sans JP", "sans-serif"],
+            "body": ["Noto Sans JP", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    body { font-family: "Noto Sans JP", "Plus Jakarta Sans", sans-serif; }
+    h1, h2, h3, h4, h5, h6 { font-family: "Plus Jakarta Sans", "Noto Sans JP", sans-serif; }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d1b12] dark:text-white transition-colors duration-200">
+  <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden font-display">
+
+    <!-- Navigation -->
+    <div class="fixed top-4 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+      <div class="pointer-events-auto w-full max-w-[960px]">
+        <div class="bg-white/90 dark:bg-[#102216]/90 backdrop-blur-md border border-[#e7f3eb] dark:border-[#2bee6c]/20 shadow-xl shadow-black/5 rounded-full px-6 py-3 transition-all">
+          <header class="flex w-full items-center justify-between whitespace-nowrap">
+            <a href="./" class="flex items-center gap-1 no-underline">
+              <img src="assets/full-logo.png" alt="Fuwalief" class="h-8" />
+            </a>
+            <div class="flex flex-1 justify-end gap-4 md:gap-8 items-center">
+              <div class="hidden md:flex items-center gap-9">
+                <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200" href="./">ホーム</a>
+                <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200" href="./#mission">ミッション</a>
+                <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200" href="./products.html">プロダクト</a>
+                <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200" href="./#company">会社概要</a>
+              </div>
+              <a href="./#contact" class="hidden md:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary text-[#0d1b12] text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity no-underline">
+                <span class="truncate">お問い合わせ</span>
+              </a>
+              <button id="menu-toggle" class="md:hidden flex items-center justify-center w-10 h-10 rounded-full hover:bg-[#e7f3eb] dark:hover:bg-[#1e3a29] transition-colors" aria-label="メニューを開く">
+                <svg id="menu-icon" class="w-6 h-6 text-[#0d1b12] dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                <svg id="close-icon" class="hidden w-6 h-6 text-[#0d1b12] dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+              </button>
+            </div>
+          </header>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden mt-2 bg-white/95 dark:bg-[#102216]/95 backdrop-blur-md border border-[#e7f3eb] dark:border-[#2bee6c]/20 shadow-xl rounded-2xl px-6 py-4">
+          <nav class="flex flex-col gap-1">
+            <a class="text-sm font-medium py-3 hover:text-primary transition-colors dark:text-gray-200" href="./">ホーム</a>
+            <a class="text-sm font-medium py-3 hover:text-primary transition-colors dark:text-gray-200" href="./#mission">ミッション</a>
+            <a class="text-sm font-medium py-3 hover:text-primary transition-colors dark:text-gray-200" href="./products.html">プロダクト</a>
+            <a class="text-sm font-medium py-3 hover:text-primary transition-colors dark:text-gray-200" href="./#company">会社概要</a>
+            <a href="./#contact" class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary text-[#0d1b12] text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity no-underline mt-2">
+              お問い合わせ
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.getElementById("menu-toggle").addEventListener("click", function() {
+        var menu = document.getElementById("mobile-menu");
+        var menuIcon = document.getElementById("menu-icon");
+        var closeIcon = document.getElementById("close-icon");
+        menu.classList.toggle("hidden");
+        menuIcon.classList.toggle("hidden");
+        closeIcon.classList.toggle("hidden");
+      });
+    </script>
+
+    <!-- Content -->
+    <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center pt-32 pb-20 md:pt-40">
+      <div class="w-full max-w-[720px]">
+        <div class="mb-4">
+          <a href="./irodori.html" class="text-sm text-primary hover:underline transition-colors">&larr; Irodori に戻る</a>
+        </div>
+        <h1 class="text-3xl md:text-4xl font-bold mb-10">Irodori プライバシーポリシー</h1>
+
+        <div class="flex flex-col gap-8 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+
+          <p>fuwalief（以下「当方」といいます）は、Irodori（以下「本アプリ」といいます）におけるユーザーの個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下「本ポリシー」といいます）を定めます。</p>
+
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第1条（アプリ提供者情報）</h2>
+            <ul class="flex flex-col gap-1">
+              <li>アプリ名: Irodori</li>
+              <li>提供者: fuwalief（個人開発者）</li>
+              <li>お問い合わせ先: fuwalief@gmail.com</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第2条（収集する情報）</h2>
+            <p>本アプリでは、以下の情報を収集します。</p>
+            <h3 class="text-sm font-bold text-[#0d1b12] dark:text-white mt-4 mb-2">1. ユーザーが提供する情報</h3>
+            <ul class="list-disc list-inside flex flex-col gap-1">
+              <li>Googleアカウント情報（氏名、メールアドレス、プロフィール画像URL）— Googleアカウントによるログイン時に取得します。</li>
+            </ul>
+            <h3 class="text-sm font-bold text-[#0d1b12] dark:text-white mt-4 mb-2">2. 自動的に収集される情報</h3>
+            <ul class="list-disc list-inside flex flex-col gap-1">
+              <li>デバイス識別子（Android広告ID、アプリセットID）</li>
+              <li>IPアドレス</li>
+              <li>デバイス情報（OS バージョン、機種名）</li>
+              <li>アプリの利用状況（起動回数、機能の使用状況）</li>
+              <li>診断情報（アプリの起動時間、パフォーマンスデータ）</li>
+              <li>位置情報（天気連動機能で使用する場合のみ、おおまかな位置情報）</li>
+            </ul>
+            <h3 class="text-sm font-bold text-[#0d1b12] dark:text-white mt-4 mb-2">3. 生成に関する情報</h3>
+            <ul class="list-disc list-inside flex flex-col gap-1">
+              <li>壁紙生成時に入力されたプロンプト（テキスト）</li>
+              <li>生成された壁紙の画像データ</li>
+              <li>クレジットの利用履歴</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第3条（情報の収集方法）</h2>
+            <h3 class="text-sm font-bold text-[#0d1b12] dark:text-white mt-2 mb-2">1. ユーザーによる入力</h3>
+            <p>Googleアカウントでのログイン時、およびプロンプト入力時に、ユーザーが直接情報を提供します。</p>
+            <h3 class="text-sm font-bold text-[#0d1b12] dark:text-white mt-4 mb-2">2. SDKによる自動収集</h3>
+            <p>本アプリに組み込まれた以下のSDK・サービスにより、情報が自動的に収集されます。</p>
+            <ul class="list-disc list-inside mt-2 flex flex-col gap-1">
+              <li>Firebase Authentication — ユーザー認証・アカウント管理</li>
+              <li>Firebase Cloud Functions — 壁紙生成処理</li>
+              <li>Firebase Cloud Storage — 生成画像の保存</li>
+              <li>Google AdMob SDK — 広告配信</li>
+              <li>Google Analytics for Firebase — アプリ利用状況の分析</li>
+            </ul>
+            <h3 class="text-sm font-bold text-[#0d1b12] dark:text-white mt-4 mb-2">3. 端末の機能</h3>
+            <p>位置情報は、ユーザーがOSレベルで位置情報の利用を許可した場合にのみ取得されます。</p>
+          </section>
+
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第4条（情報の利用目的）</h2>
+            <p>収集した情報は、以下の目的で利用します。</p>
+            <ol class="list-decimal list-inside mt-2 flex flex-col gap-2">
+              <li><span class="font-medium">本アプリのサービス提供</span> — ユーザー認証、壁紙の生成・保存・設定、クレジット管理</li>
+              <li><span class="font-medium">広告の配信</span> — Google AdMobを通じたリワード広告の表示。パーソナライズド広告（ユーザーの関心に基づく広告）の配信<br /><span class="text-xs text-gray-500 dark:text-gray-400">※ ユーザーは端末の設定から広告のパーソナライズをオプトアウトできます（設定 → Google → 広告 → 「広告のパーソナライズをオプトアウト」）</span></li>
+              <li><span class="font-medium">天気連動機能</span> — 位置情報に基づく天気情報の取得と、天気に応じた壁紙生成</li>
+              <li><span class="font-medium">サービスの改善</span> — アプリの利用状況の分析、不具合の検出と修正</li>
+              <li><span class="font-medium">不正利用の防止</span> — 不正なアクセスや利用の検出・防止</li>
+              <li><span class="font-medium">お問い合わせへの対応</span> — ユーザーからのお問い合わせに対する回答・対応</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第5条（第三者への情報提供）</h2>
+            <p>当方は、以下の場合を除き、ユーザーの同意なく個人情報を第三者に提供しません。</p>
+            <h3 class="text-sm font-bold text-[#0d1b12] dark:text-white mt-4 mb-2">1. 本アプリの機能提供に必要な業務委託先</h3>
+            <ul class="list-disc list-inside flex flex-col gap-2">
+              <li>
+                <span class="font-medium">Google LLC（米国）</span> — Firebase（認証・データ保存・分析）、AdMob（広告配信）<br />
+                <span class="text-xs text-gray-500 dark:text-gray-400 ml-5">Googleのプライバシーポリシー: <a href="https://policies.google.com/privacy?hl=ja" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">https://policies.google.com/privacy?hl=ja</a></span>
+              </li>
+              <li>
+                <span class="font-medium">Stability AI Ltd.（英国）</span> — AI画像生成エンジンの提供。ユーザーが入力したプロンプト（テキスト）を画像生成のために送信します。生成されたプロンプトおよび画像は、Stability AIのサーバーで処理されます。<br />
+                <span class="text-xs text-gray-500 dark:text-gray-400 ml-5">Stability AIのプライバシーポリシー: <a href="https://stability.ai/privacy-policy" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">https://stability.ai/privacy-policy</a></span>
+              </li>
+            </ul>
+            <h3 class="text-sm font-bold text-[#0d1b12] dark:text-white mt-4 mb-2">2. 法令に基づく場合</h3>
+            <p>法令に基づき開示が求められた場合。</p>
+            <h3 class="text-sm font-bold text-[#0d1b12] dark:text-white mt-4 mb-2">3. 人の生命・身体・財産の保護に必要な場合</h3>
+            <p>ユーザー本人の同意を得ることが困難であるとき。</p>
+          </section>
+
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第6条（外国にある第三者への提供）</h2>
+            <p>本アプリでは、以下の外国にある第三者にデータを提供します。</p>
+            <ol class="list-decimal list-inside mt-2 flex flex-col gap-2">
+              <li><span class="font-medium">Google LLC（アメリカ合衆国）</span> — 個人情報保護制度: セクトラル方式（州法による保護、CCPA等）。Googleは標準契約条項（SCC）等に基づくデータ保護措置を講じています</li>
+              <li><span class="font-medium">Stability AI Ltd.（イギリス）</span> — 個人情報保護制度: UK GDPR（EU GDPRと同等の保護水準）</li>
+            </ol>
+            <p class="mt-2">これらの提供は、日本の個人情報保護法第28条に基づき、適切な措置を講じた上で行われます。</p>
+          </section>
+
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第7条（広告について）</h2>
+            <ol class="list-decimal list-inside flex flex-col gap-2">
+              <li>本アプリではGoogle AdMobを利用してリワード広告を配信しています。</li>
+              <li>AdMobは、広告配信のためにデバイス識別子（Android広告ID）、IPアドレス、ユーザーの操作情報（タップ、動画視聴等）を自動的に収集します。</li>
+              <li>収集されたデータは、広告の配信・効果測定・不正防止のために使用されます。</li>
+              <li>すべてのデータはTLS（Transport Layer Security）により暗号化された状態で転送されます。</li>
+              <li>パーソナライズド広告のオプトアウト — ユーザーは以下の方法で広告のパーソナライズを無効化できます。
+                <ul class="list-disc list-inside ml-5 mt-1 flex flex-col gap-1">
+                  <li>Android端末: 設定 → Google → 広告 → 「広告のパーソナライズをオプトアウト」</li>
+                  <li>Google広告設定: <a href="https://adssettings.google.com/" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">https://adssettings.google.com/</a></li>
+                </ul>
+              </li>
+            </ol>
+          </section>
+
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第8条（データの保存と管理）</h2>
+            <ol class="list-decimal list-inside flex flex-col gap-2">
+              <li>Googleアカウント情報およびクレジット情報は、ユーザーの端末内（DataStore）に保存されます。</li>
+              <li>生成された壁紙画像は、Firebase Cloud Storageに一時保存され、端末へのダウンロード後に削除される場合があります。</li>
+              <li>ユーザーが入力したプロンプトは、画像生成のためにFirebase Cloud FunctionsおよびStability AI APIに送信されますが、当方のサーバーに永続的に保存されることはありません。</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第9条（ユーザーの権利）</h2>
+            <p>ユーザーは、個人情報保護法に基づき、以下の権利を有します。</p>
+            <ol class="list-decimal list-inside mt-2 flex flex-col gap-2">
+              <li><span class="font-medium">開示請求</span> — 当方が保有するユーザーの個人情報について、開示を請求することができます。</li>
+              <li><span class="font-medium">訂正・追加・削除請求</span> — 個人情報が事実でない場合、訂正・追加・削除を請求することができます。</li>
+              <li><span class="font-medium">利用停止・消去請求</span> — 個人情報が利用目的の範囲を超えて利用されている場合、または不正に取得された場合、利用停止・消去を請求することができます。</li>
+              <li><span class="font-medium">アカウント削除</span> — 本アプリ内の「設定」→「アカウント」→「アカウントを削除」から、いつでもアカウントを削除できます。アカウントを削除すると、Firebase Authentication上の認証情報が削除されます。</li>
+              <li><span class="font-medium">データ収集の停止</span> — 本アプリをアンインストールすることで、本アプリによるデータ収集を停止することができます。</li>
+            </ol>
+            <p class="mt-2">上記の請求を行う場合は、第1条に記載のお問い合わせ先までご連絡ください。本人確認を行った上で、合理的な期間内に対応いたします。</p>
+          </section>
+
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第10条（児童のプライバシー）</h2>
+            <p>本アプリは、13歳未満の児童を対象としていません。当方は、13歳未満の児童から意図的に個人情報を収集することはありません。13歳未満の児童が個人情報を提供したことが判明した場合、当方は速やかにその情報を削除します。</p>
+          </section>
+
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第11条（セキュリティ）</h2>
+            <p>当方は、収集した個人情報の漏洩、紛失、毀損を防止するために、以下の措置を講じています。</p>
+            <ol class="list-decimal list-inside mt-2 flex flex-col gap-1">
+              <li>通信の暗号化（HTTPS/TLS）</li>
+              <li>Firebase Authenticationによる認証管理</li>
+              <li>Credential Manager APIによるセキュアなログイン処理</li>
+              <li>アクセス権限の最小化</li>
+            </ol>
+            <p class="mt-2">ただし、インターネット上の通信においてセキュリティを完全に保証することはできません。</p>
+          </section>
+
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第12条（本ポリシーの変更）</h2>
+            <ol class="list-decimal list-inside flex flex-col gap-2">
+              <li>当方は、必要に応じて本ポリシーを変更することがあります。</li>
+              <li>変更後のプライバシーポリシーは、本アプリ内または当方のウェブサイトに掲載した時点から効力を生じるものとします。</li>
+              <li>重要な変更を行う場合は、アプリ内通知またはその他の方法により、ユーザーに事前にお知らせします。</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第13条（準拠法）</h2>
+            <p>本ポリシーの解釈および適用は、日本法に準拠するものとします。</p>
+          </section>
+
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第14条（お問い合わせ）</h2>
+            <p>本ポリシーに関するお問い合わせは、以下の連絡先までお願いいたします。</p>
+            <ul class="mt-2 flex flex-col gap-1">
+              <li>アプリ名: Irodori</li>
+              <li>提供者: fuwalief</li>
+              <li>メールアドレス: fuwalief@gmail.com</li>
+            </ul>
+          </section>
+
+          <p class="text-gray-400 dark:text-gray-500 mt-4">最終更新日: 2026年2月3日<br />施行日: 2026年2月3日</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-background-light dark:bg-background-dark border-t border-[#e7f3eb] dark:border-[#1e3a29] py-12 mt-auto">
+      <div class="px-4 md:px-10 lg:px-40 flex justify-center">
+        <div class="flex flex-col items-center gap-6 text-center max-w-[960px] w-full">
+          <a href="./" class="flex items-center">
+            <img src="assets/full-logo.png" alt="Fuwalief" class="h-7" />
+          </a>
+          <div class="flex gap-6 text-sm text-gray-600 dark:text-gray-400">
+            <a class="hover:text-primary transition-colors" href="./privacy.html">プライバシーポリシー</a>
+            <a class="hover:text-primary transition-colors" href="./terms.html">利用規約</a>
+            <a class="hover:text-primary transition-colors" href="./#contact">お問い合わせ</a>
+          </div>
+          <p class="text-xs text-gray-400 dark:text-gray-600">
+            &copy; 2025 Fuwalief Co., Ltd.（法人登記準備中） All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html class="light" lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Irodori 利用規約 - Fuwalief</title>
+  <meta name="description" content="Irodori（AI壁紙生成アプリ）の利用規約についてご説明します。" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#2bee6c",
+            "primary-hover": "#25d05e",
+            "background-light": "#f6f8f6",
+            "background-dark": "#102216",
+            "text-main": "#0d1b12",
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans", "Noto Sans JP", "sans-serif"],
+            "body": ["Noto Sans JP", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    body { font-family: "Noto Sans JP", "Plus Jakarta Sans", sans-serif; }
+    h1, h2, h3, h4, h5, h6 { font-family: "Plus Jakarta Sans", "Noto Sans JP", sans-serif; }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d1b12] dark:text-white transition-colors duration-200">
+  <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden font-display">
+
+    <!-- Navigation -->
+    <div class="fixed top-4 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+      <div class="pointer-events-auto w-full max-w-[960px]">
+        <div class="bg-white/90 dark:bg-[#102216]/90 backdrop-blur-md border border-[#e7f3eb] dark:border-[#2bee6c]/20 shadow-xl shadow-black/5 rounded-full px-6 py-3 transition-all">
+          <header class="flex w-full items-center justify-between whitespace-nowrap">
+            <a href="./" class="flex items-center gap-1 no-underline">
+              <img src="assets/full-logo.png" alt="Fuwalief" class="h-8" />
+            </a>
+            <div class="flex flex-1 justify-end gap-4 md:gap-8 items-center">
+              <div class="hidden md:flex items-center gap-9">
+                <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200" href="./">ホーム</a>
+                <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200" href="./#mission">ミッション</a>
+                <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200" href="./products.html">プロダクト</a>
+                <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200" href="./#company">会社概要</a>
+              </div>
+              <a href="./#contact" class="hidden md:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary text-[#0d1b12] text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity no-underline">
+                <span class="truncate">お問い合わせ</span>
+              </a>
+              <button id="menu-toggle" class="md:hidden flex items-center justify-center w-10 h-10 rounded-full hover:bg-[#e7f3eb] dark:hover:bg-[#1e3a29] transition-colors" aria-label="メニューを開く">
+                <svg id="menu-icon" class="w-6 h-6 text-[#0d1b12] dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                <svg id="close-icon" class="hidden w-6 h-6 text-[#0d1b12] dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+              </button>
+            </div>
+          </header>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden mt-2 bg-white/95 dark:bg-[#102216]/95 backdrop-blur-md border border-[#e7f3eb] dark:border-[#2bee6c]/20 shadow-xl rounded-2xl px-6 py-4">
+          <nav class="flex flex-col gap-1">
+            <a class="text-sm font-medium py-3 hover:text-primary transition-colors dark:text-gray-200" href="./">ホーム</a>
+            <a class="text-sm font-medium py-3 hover:text-primary transition-colors dark:text-gray-200" href="./#mission">ミッション</a>
+            <a class="text-sm font-medium py-3 hover:text-primary transition-colors dark:text-gray-200" href="./products.html">プロダクト</a>
+            <a class="text-sm font-medium py-3 hover:text-primary transition-colors dark:text-gray-200" href="./#company">会社概要</a>
+            <a href="./#contact" class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary text-[#0d1b12] text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity no-underline mt-2">
+              お問い合わせ
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.getElementById("menu-toggle").addEventListener("click", function() {
+        var menu = document.getElementById("mobile-menu");
+        var menuIcon = document.getElementById("menu-icon");
+        var closeIcon = document.getElementById("close-icon");
+        menu.classList.toggle("hidden");
+        menuIcon.classList.toggle("hidden");
+        closeIcon.classList.toggle("hidden");
+      });
+    </script>
+
+    <!-- Content -->
+    <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center pt-32 pb-20 md:pt-40">
+      <div class="w-full max-w-[720px]">
+        <div class="mb-4">
+          <a href="./irodori.html" class="text-sm text-primary hover:underline transition-colors">&larr; Irodori に戻る</a>
+        </div>
+        <h1 class="text-3xl md:text-4xl font-bold mb-10">Irodori 利用規約</h1>
+
+        <div class="flex flex-col gap-8 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第1条（適用）</h2>
+            <ol class="list-decimal list-inside flex flex-col gap-2">
+              <li>本規約は、fuwalief（以下「当方」といいます）が提供するアプリ「Irodori」（以下「本アプリ」といいます）の利用に関する条件を、本アプリを利用するすべてのユーザー（以下「ユーザー」といいます）と当方との間で定めるものです。</li>
+              <li>ユーザーは、本アプリをインストールまたは利用することにより、本規約に同意したものとみなされます。</li>
+              <li>当方が本アプリ内で別途定める個別規定やガイドラインは、本規約の一部を構成するものとします。本規約と個別規定が矛盾する場合は、個別規定が優先されます。</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第2条（サービスの内容）</h2>
+            <p>本アプリは、以下の機能を提供します。</p>
+            <ol class="list-decimal list-inside mt-2 flex flex-col gap-2">
+              <li><span class="font-medium">AI壁紙生成</span> — ユーザーが入力したテキスト（プロンプト）やテンプレートに基づき、AI技術を用いてスマートフォン用の壁紙画像を生成する機能。</li>
+              <li><span class="font-medium">壁紙の自動生成</span> — ユーザーが設定した時刻に、自動的に壁紙を生成・設定する機能。</li>
+              <li><span class="font-medium">壁紙の設定</span> — 生成された壁紙をホーム画面またはロック画面に設定する機能。</li>
+              <li><span class="font-medium">クレジットシステム</span> — 壁紙の生成に必要なクレジットの管理。リワード広告の視聴によりクレジットを獲得できます。</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第3条（アカウント）</h2>
+            <ol class="list-decimal list-inside flex flex-col gap-2">
+              <li>ユーザーは、本アプリの初回起動時にGoogleアカウントでのログインを求められます。</li>
+              <li>ユーザーは、自己の責任において、アカウント情報を適切に管理するものとします。</li>
+              <li>アカウントの利用に関して生じた損害について、当方は一切の責任を負いません。ただし、当方に故意または重大な過失がある場合はこの限りではありません。</li>
+              <li>ユーザーは、本アプリ内の設定画面からいつでもアカウントを削除することができます。</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第4条（クレジットシステム）</h2>
+            <ol class="list-decimal list-inside flex flex-col gap-2">
+              <li>壁紙の生成には、所定のクレジットが必要です。</li>
+              <li><span class="font-medium">クレジットの獲得方法</span>
+                <ul class="list-disc list-inside ml-5 mt-1 flex flex-col gap-1">
+                  <li>ウェルカムボーナス（初回登録時に付与）</li>
+                  <li>リワード広告の視聴（1日の視聴回数に上限があります）</li>
+                </ul>
+              </li>
+              <li><span class="font-medium">クレジットの消費</span>
+                <ul class="list-disc list-inside ml-5 mt-1 flex flex-col gap-1">
+                  <li>高速生成: 1クレジット</li>
+                  <li>高品質生成: 2クレジット</li>
+                  <li>自動生成: 1回あたり1クレジット</li>
+                </ul>
+              </li>
+              <li><span class="font-medium">クレジットに関する注意事項</span>
+                <ul class="list-disc list-inside ml-5 mt-1 flex flex-col gap-1">
+                  <li>消費されたクレジットは、理由を問わず返還されません。ただし、当方のシステム障害により壁紙の生成に失敗した場合は、自動的にクレジットが返還されます。</li>
+                  <li>クレジットに有効期限はありません。</li>
+                  <li>クレジットを他のユーザーに譲渡・売買することはできません。</li>
+                  <li>クレジットを現金に換金することはできません。</li>
+                </ul>
+              </li>
+              <li><span class="font-medium">自動生成におけるクレジット消費</span>
+                <ul class="list-disc list-inside ml-5 mt-1 flex flex-col gap-1">
+                  <li>自動生成が有効な場合、設定された各時刻に1クレジットが消費されます。</li>
+                  <li>1日の自動生成回数には上限があります（無料プラン: 4回、プレミアムプラン: 10回）。</li>
+                  <li>クレジットが不足している場合、自動生成は実行されず、通知でお知らせします。</li>
+                </ul>
+              </li>
+            </ol>
+          </section>
+
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第5条（生成コンテンツに関する権利）</h2>
+            <ol class="list-decimal list-inside flex flex-col gap-2">
+              <li>本アプリで生成された壁紙画像（以下「生成コンテンツ」といいます）について、ユーザーは個人的な使用の範囲で自由に利用することができます。</li>
+              <li><span class="font-medium">生成コンテンツの権利に関する注意事項</span>
+                <ul class="list-disc list-inside ml-5 mt-1 flex flex-col gap-1">
+                  <li>生成コンテンツはAIによって自動生成されたものであり、日本の著作権法上、人間の創作的関与がない場合は著作物に該当しない可能性があります。</li>
+                  <li>生成コンテンツが既存の著作物に類似する場合、意図せず第三者の著作権を侵害する可能性があります。ユーザーは、生成コンテンツの利用にあたり、第三者の権利を侵害しないよう自己の責任で確認するものとします。</li>
+                  <li>当方は、生成コンテンツの独自性、新規性、特定目的への適合性について保証しません。</li>
+                </ul>
+              </li>
+              <li>本アプリのUI、デザイン、ソフトウェア、ロゴ、および関連するすべての知的財産権は、当方または正当な権利者に帰属します。</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第6条（禁止事項）</h2>
+            <p>ユーザーは、本アプリの利用にあたり、以下の行為を行ってはなりません。</p>
+            <ol class="list-decimal list-inside mt-2 flex flex-col gap-1">
+              <li>法令または公序良俗に違反する行為</li>
+              <li>犯罪行為に関連する行為</li>
+              <li>以下の内容を含むプロンプトの入力または壁紙の生成
+                <ul class="list-disc list-inside ml-5 mt-1 flex flex-col gap-1">
+                  <li>暴力的、残虐な内容</li>
+                  <li>わいせつ、性的な内容</li>
+                  <li>児童の性的搾取に該当する内容</li>
+                  <li>差別、ヘイトスピーチに該当する内容</li>
+                  <li>特定の個人を誹謗中傷する内容</li>
+                  <li>テロリズムや暴力的過激主義を助長する内容</li>
+                  <li>実在の人物の肖像や名誉を侵害する内容</li>
+                </ul>
+              </li>
+              <li>第三者の著作権、商標権、肖像権、その他の知的財産権を侵害する行為</li>
+              <li>当方のサーバーまたはネットワークに過度の負荷をかける行為</li>
+              <li>本アプリの運営を妨害する行為</li>
+              <li>不正アクセス、またはこれを試みる行為</li>
+              <li>本アプリのリバースエンジニアリング、逆コンパイル、逆アセンブル</li>
+              <li>他のユーザーになりすます行為</li>
+              <li>広告の不正視聴（自動化ツール等による広告の不正な視聴を含む）</li>
+              <li>クレジットの不正取得または不正利用</li>
+              <li>その他、当方が不適切と判断する行為</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第7条（サービスの停止・中断）</h2>
+            <ol class="list-decimal list-inside flex flex-col gap-2">
+              <li>当方は、以下の場合に、ユーザーへの事前の通知なく、本アプリの全部または一部のサービス提供を停止・中断することがあります。
+                <ul class="list-disc list-inside ml-5 mt-1 flex flex-col gap-1">
+                  <li>システムの保守・点検・更新を行う場合</li>
+                  <li>地震、落雷、火災、停電その他の不可抗力により提供が困難な場合</li>
+                  <li>第三者が提供するサービス（Firebase、Stability AI等）が停止・中断した場合</li>
+                  <li>その他、当方がサービス提供が困難と判断した場合</li>
+                </ul>
+              </li>
+              <li>サービスの停止・中断により、ユーザーまたは第三者に損害が発生した場合であっても、当方は一切の責任を負いません。ただし、当方に故意または重大な過失がある場合はこの限りではありません。</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第8条（利用制限・登録抹消）</h2>
+            <ol class="list-decimal list-inside flex flex-col gap-2">
+              <li>当方は、ユーザーが以下のいずれかに該当する場合、事前の通知なく、アカウントの利用制限または登録の抹消を行うことができます。
+                <ul class="list-disc list-inside ml-5 mt-1 flex flex-col gap-1">
+                  <li>本規約のいずれかの条項に違反した場合</li>
+                  <li>登録事項に虚偽の事実があることが判明した場合</li>
+                  <li>その他、当方が本アプリの利用を適当でないと判断した場合</li>
+                </ul>
+              </li>
+              <li>利用制限または登録抹消により、ユーザーのクレジット残高は失われます。当方は、失われたクレジットの補償を行いません。</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第9条（免責事項）</h2>
+            <ol class="list-decimal list-inside flex flex-col gap-2">
+              <li>当方は、本アプリの内容、品質、機能、および生成コンテンツについて、明示的または黙示的を問わず、いかなる保証も行いません。</li>
+              <li><span class="font-medium">AI生成に関する免責</span>
+                <ul class="list-disc list-inside ml-5 mt-1 flex flex-col gap-1">
+                  <li>生成される壁紙の品質、内容、適切性について保証しません。</li>
+                  <li>AIによる生成結果は毎回異なり、ユーザーの期待どおりの結果が得られない場合があります。</li>
+                  <li>生成コンテンツが意図せず不適切な内容を含む可能性があります。</li>
+                  <li>生成コンテンツが第三者の権利を侵害する可能性について、当方は責任を負いません。</li>
+                </ul>
+              </li>
+              <li><span class="font-medium">第三者サービスに関する免責</span>
+                <ul class="list-disc list-inside ml-5 mt-1 flex flex-col gap-1">
+                  <li>本アプリは、Google（Firebase、AdMob）、Stability AI等の第三者サービスに依存しています。</li>
+                  <li>これらの第三者サービスの障害、仕様変更、サービス終了等に起因する損害について、当方は責任を負いません。</li>
+                </ul>
+              </li>
+              <li>当方は、本アプリの利用により発生したユーザーの損害について、当方に故意または重大な過失がある場合を除き、一切の責任を負いません。</li>
+              <li>消費者契約法その他の法令により、本条の免責規定の全部または一部が適用されない場合があります。その場合、当方の損害賠償責任は、ユーザーが本アプリの利用に関して当方に支払った金額を上限とします。本アプリが無料で利用されている場合、当方の損害賠償責任は発生しないものとします。</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第10条（広告の表示）</h2>
+            <ol class="list-decimal list-inside flex flex-col gap-2">
+              <li>本アプリでは、Google AdMobを通じてリワード広告が表示されます。</li>
+              <li>広告の表示はユーザーの任意であり、広告を視聴することでクレジットを獲得できます。</li>
+              <li>広告の内容は、広告主またはGoogle AdMobにより提供されるものであり、当方は広告の内容について一切の責任を負いません。</li>
+              <li>広告に起因してユーザーに損害が発生した場合、当方は責任を負いません。</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第11条（サービスの変更・終了）</h2>
+            <ol class="list-decimal list-inside flex flex-col gap-2">
+              <li>当方は、ユーザーへの事前の通知により、本アプリのサービス内容を変更し、またはサービスの提供を終了することができます。</li>
+              <li>サービスの終了にあたっては、合理的な期間をもって事前にユーザーに通知します。</li>
+              <li>サービスの変更・終了により、ユーザーに損害が発生した場合であっても、当方は一切の責任を負いません。ただし、当方に故意または重大な過失がある場合はこの限りではありません。</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第12条（規約の変更）</h2>
+            <ol class="list-decimal list-inside flex flex-col gap-2">
+              <li>当方は、以下の場合に、本規約を変更することができます。
+                <ul class="list-disc list-inside ml-5 mt-1 flex flex-col gap-1">
+                  <li>本規約の変更がユーザーの一般の利益に適合する場合</li>
+                  <li>本規約の変更が、契約の目的に反せず、変更の必要性、変更後の内容の相当性、その他の変更に係る事情に照らして合理的なものである場合</li>
+                </ul>
+              </li>
+              <li>当方は、本規約を変更する場合、変更後の本規約の内容および効力発生日を、本アプリ内またはウェブサイト上で事前に通知します。</li>
+              <li>変更後の本規約の効力発生日以降に、ユーザーが本アプリを利用した場合、ユーザーは変更後の本規約に同意したものとみなします。</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第13条（通知・連絡）</h2>
+            <ol class="list-decimal list-inside flex flex-col gap-2">
+              <li>当方からユーザーへの通知は、本アプリ内の通知機能、プッシュ通知、または当方のウェブサイトへの掲載により行います。</li>
+              <li>ユーザーから当方への連絡は、以下のメールアドレスにて受け付けます。<br />メールアドレス: fuwalief@gmail.com</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第14条（権利義務の譲渡禁止）</h2>
+            <p>ユーザーは、当方の事前の書面による承諾なく、本規約上の地位または本規約に基づく権利義務を、第三者に譲渡し、または担保に供することはできません。</p>
+          </section>
+
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第15条（分離可能性）</h2>
+            <p>本規約のいずれかの条項またはその一部が、法令等により無効または執行不能と判断された場合であっても、本規約の残りの部分は引き続き完全に効力を有するものとします。</p>
+          </section>
+
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第16条（準拠法・管轄裁判所）</h2>
+            <ol class="list-decimal list-inside flex flex-col gap-2">
+              <li>本規約の解釈および適用は、日本法に準拠するものとします。</li>
+              <li>本アプリに関して紛争が生じた場合、当方の所在地を管轄する裁判所を第一審の専属的合意管轄裁判所とします。</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第17条（お問い合わせ）</h2>
+            <p>本規約に関するお問い合わせは、以下の連絡先までお願いいたします。</p>
+            <ul class="mt-2 flex flex-col gap-1">
+              <li>アプリ名: Irodori</li>
+              <li>提供者: fuwalief</li>
+              <li>メールアドレス: fuwalief@gmail.com</li>
+            </ul>
+          </section>
+
+          <p class="text-gray-400 dark:text-gray-500 mt-4">最終更新日: 2026年2月3日<br />施行日: 2026年2月3日</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-background-light dark:bg-background-dark border-t border-[#e7f3eb] dark:border-[#1e3a29] py-12 mt-auto">
+      <div class="px-4 md:px-10 lg:px-40 flex justify-center">
+        <div class="flex flex-col items-center gap-6 text-center max-w-[960px] w-full">
+          <a href="./" class="flex items-center">
+            <img src="assets/full-logo.png" alt="Fuwalief" class="h-7" />
+          </a>
+          <div class="flex gap-6 text-sm text-gray-600 dark:text-gray-400">
+            <a class="hover:text-primary transition-colors" href="./privacy.html">プライバシーポリシー</a>
+            <a class="hover:text-primary transition-colors" href="./terms.html">利用規約</a>
+            <a class="hover:text-primary transition-colors" href="./#contact">お問い合わせ</a>
+          </div>
+          <p class="text-xs text-gray-400 dark:text-gray-600">
+            &copy; 2025 Fuwalief Co., Ltd.（法人登記準備中） All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
