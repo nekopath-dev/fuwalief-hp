@@ -38,6 +38,9 @@ Fuwalief（法人登記準備中）のコーポレートサイト。GitHub Pages
 - モバイルハンバーガーメニュー搭載（md未満で表示、vanilla JS）
 - お問い合わせボタンは `<a>` タグで統一（`<button>` ではない）
 - フッターの著作権表示に「（法人登記準備中）」を含める
+- スクロールアニメーション: CSS @keyframes + Intersection Observer（外部ライブラリ不使用）
+  - `data-animate` 属性 + `fade-in-up` / `fade-in` / `scale-in` クラスで適用
+  - 対象: index.html, products.html, irodori.html（法的文書ページは対象外）
 
 ## ステータス
 
@@ -57,6 +60,7 @@ Fuwalief（法人登記準備中）のコーポレートサイト。GitHub Pages
 - [x] irodori.html（プロダクト紹介ページ）作成
 - [x] irodori-privacy.html（Irodoriプライバシーポリシー 全14条）作成
 - [x] irodori-terms.html（Irodori利用規約 全17条）作成
+- [x] スクロールアニメーション追加（index.html / products.html / irodori.html）
 
 ### 要対応
 - [ ] OGPメタタグの追加（OGP画像の用意後）
