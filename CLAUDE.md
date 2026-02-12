@@ -21,6 +21,8 @@ Fuwalief（法人登記準備中）のコーポレートサイト。GitHub Pages
 - `terms.html` - 利用規約（会社全体）
 - `assets/logo.png` - ファビコン用アイコン（四つ葉のクローバー）
 - `assets/full-logo.png` - ヘッダー・フッター用ロゴ（アイコン＋文字）
+- `assets/irodori-icon.png` - Irodori アプリアイコン
+- `assets/beta/` - ベータテスト参加手順のスクリーンショット
 
 ## リポジトリ
 - GitHub: https://github.com/nekopath-dev/fuwalief-hp
