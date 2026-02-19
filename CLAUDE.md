@@ -17,6 +17,7 @@ Fuwalief（法人登記準備中）のコーポレートサイト。GitHub Pages
 - `irodori-terms.html` - Irodori 利用規約
 - `irodori-delete-account.html` - Irodori アカウント削除案内
 - `irodori-beta.html` - Irodori クローズドベータテスト参加方法
+- `irodori-ai-ethics.html` - Irodori AI倫理ポリシー
 - `privacy.html` - プライバシーポリシー（会社全体）
 - `terms.html` - 利用規約（会社全体）
 - `assets/logo.png` - ファビコン用アイコン（四つ葉のクローバー）
@@ -67,6 +68,10 @@ Fuwalief（法人登記準備中）のコーポレートサイト。GitHub Pages
 - [x] スクロールアニメーション追加（index.html / products.html / irodori.html）
 - [x] irodori-delete-account.html（アカウント削除案内ページ）作成
 - [x] irodori-beta.html（クローズドベータテスト参加方法ページ）作成
+- [x] Irodoriアプリアイコン追加（irodori.html / products.html）
+- [x] 不要ファイル削除（ルートのスクショ・txtファイル）
+- [x] メールアドレス修正（irodori-privacy.html / irodori-terms.html: fuwalief@gmail.com → contact@fuwalief.com）
+- [x] irodori-ai-ethics.html（AI倫理ポリシーページ）作成
 
 ### 要対応
 - [ ] OGPメタタグの追加（OGP画像の用意後）
