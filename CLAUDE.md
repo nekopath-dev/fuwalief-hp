@@ -28,6 +28,7 @@ Fuwalief（法人登記準備中）のコーポレートサイト。GitHub Pages
 - `assets/logo.png` - ファビコン用アイコン（四つ葉のクローバー）
 - `assets/full-logo.png` - ヘッダー・フッター用ロゴ（アイコン＋文字）
 - `assets/irodori-icon.png` - Irodori アプリアイコン
+- `assets/madobe-icon.png` - Madobe アプリアイコン
 - `assets/beta/` - ベータテスト参加手順のスクリーンショット
 
 ## リポジトリ
