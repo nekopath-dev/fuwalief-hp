@@ -11,13 +11,18 @@ Fuwalief（法人登記準備中）のコーポレートサイト。GitHub Pages
 
 ## サイト構成
 - `index.html` - ホームページ（Hero / Mission / Values / Company Profile / Contact）
-- `products.html` - プロダクト一覧ページ（Irodoriカード等）
+- `products.html` - プロダクト一覧ページ（Irodori / Madobeカード）
 - `irodori.html` - Irodori プロダクト紹介ページ
 - `irodori-privacy.html` - Irodori プライバシーポリシー
 - `irodori-terms.html` - Irodori 利用規約
 - `irodori-delete-account.html` - Irodori アカウント削除案内
 - `irodori-beta.html` - Irodori クローズドベータテスト参加方法
 - `irodori-ai-ethics.html` - Irodori AI倫理ポリシー
+- `madobe.html` - Madobe プロダクト紹介ページ
+- `madobe-privacy.html` - Madobe プライバシーポリシー
+- `madobe-terms.html` - Madobe 利用規約
+- `madobe-delete-account.html` - Madobe アカウント削除案内
+- `madobe-ai-ethics.html` - Madobe AI倫理ポリシー
 - `privacy.html` - プライバシーポリシー（会社全体）
 - `terms.html` - 利用規約（会社全体）
 - `assets/logo.png` - ファビコン用アイコン（四つ葉のクローバー）
@@ -45,7 +50,7 @@ Fuwalief（法人登記準備中）のコーポレートサイト。GitHub Pages
 - フッターの著作権表示に「（法人登記準備中）」を含める
 - スクロールアニメーション: CSS @keyframes + Intersection Observer（外部ライブラリ不使用）
   - `data-animate` 属性 + `fade-in-up` / `fade-in` / `scale-in` クラスで適用
-  - 対象: index.html, products.html, irodori.html, irodori-beta.html（法的文書ページは対象外）
+  - 対象: index.html, products.html, irodori.html, irodori-beta.html, madobe.html（法的文書ページは対象外）
 
 ## ステータス
 
@@ -72,6 +77,10 @@ Fuwalief（法人登記準備中）のコーポレートサイト。GitHub Pages
 - [x] 不要ファイル削除（ルートのスクショ・txtファイル）
 - [x] メールアドレス修正（irodori-privacy.html / irodori-terms.html: fuwalief@gmail.com → contact@fuwalief.com）
 - [x] irodori-ai-ethics.html（AI倫理ポリシーページ）作成
+- [x] madobe.html（Madobeプロダクト紹介ページ）作成
+- [x] products.html にMadobeカード追加
+- [x] Madobe関連ページ確認・整備（privacy / terms / delete-account / ai-ethics）
+- [x] アプリ詳細.md 削除
 
 ### 要対応
 - [ ] OGPメタタグの追加（OGP画像の用意後）

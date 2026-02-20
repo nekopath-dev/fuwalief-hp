@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html class="light" lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Madobe AI倫理ポリシー - Fuwalief</title>
+  <meta name="description" content="Madobe（「スマホの中にキャラクターが住んでいる」AI壁紙アプリ）のAI倫理ポリシーについてご説明します。" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#2bee6c",
+            "primary-hover": "#25d05e",
+            "background-light": "#f6f8f6",
+            "background-dark": "#102216",
+            "text-main": "#0d1b12",
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans", "Noto Sans JP", "sans-serif"],
+            "body": ["Noto Sans JP", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    body { font-family: "Noto Sans JP", "Plus Jakarta Sans", sans-serif; }
+    h1, h2, h3, h4, h5, h6 { font-family: "Plus Jakarta Sans", "Noto Sans JP", sans-serif; }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d1b12] dark:text-white transition-colors duration-200">
+  <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden font-display">
+
+    <!-- Navigation -->
+    <div class="fixed top-4 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+      <div class="pointer-events-auto w-full max-w-[960px]">
+        <div class="bg-white/90 dark:bg-[#102216]/90 backdrop-blur-md border border-[#e7f3eb] dark:border-[#2bee6c]/20 shadow-xl shadow-black/5 rounded-full px-6 py-3 transition-all">
+          <header class="flex w-full items-center justify-between whitespace-nowrap">
+            <a href="./" class="flex items-center gap-1 no-underline">
+              <img src="assets/full-logo.png" alt="Fuwalief" class="h-8" />
+            </a>
+            <div class="flex flex-1 justify-end gap-4 md:gap-8 items-center">
+              <div class="hidden md:flex items-center gap-9">
+                <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200" href="./">ホーム</a>
+                <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200" href="./#mission">ミッション</a>
+                <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200" href="./products.html">プロダクト</a>
+                <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200" href="./#company">会社概要</a>
+              </div>
+              <a href="./#contact" class="hidden md:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary text-[#0d1b12] text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity no-underline">
+                <span class="truncate">お問い合わせ</span>
+              </a>
+              <button id="menu-toggle" class="md:hidden flex items-center justify-center w-10 h-10 rounded-full hover:bg-[#e7f3eb] dark:hover:bg-[#1e3a29] transition-colors" aria-label="メニューを開く">
+                <svg id="menu-icon" class="w-6 h-6 text-[#0d1b12] dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                <svg id="close-icon" class="hidden w-6 h-6 text-[#0d1b12] dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+              </button>
+            </div>
+          </header>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden mt-2 bg-white/95 dark:bg-[#102216]/95 backdrop-blur-md border border-[#e7f3eb] dark:border-[#2bee6c]/20 shadow-xl rounded-2xl px-6 py-4">
+          <nav class="flex flex-col gap-1">
+            <a class="text-sm font-medium py-3 hover:text-primary transition-colors dark:text-gray-200" href="./">ホーム</a>
+            <a class="text-sm font-medium py-3 hover:text-primary transition-colors dark:text-gray-200" href="./#mission">ミッション</a>
+            <a class="text-sm font-medium py-3 hover:text-primary transition-colors dark:text-gray-200" href="./products.html">プロダクト</a>
+            <a class="text-sm font-medium py-3 hover:text-primary transition-colors dark:text-gray-200" href="./#company">会社概要</a>
+            <a href="./#contact" class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary text-[#0d1b12] text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity no-underline mt-2">
+              お問い合わせ
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.getElementById("menu-toggle").addEventListener("click", function() {
+        var menu = document.getElementById("mobile-menu");
+        var menuIcon = document.getElementById("menu-icon");
+        var closeIcon = document.getElementById("close-icon");
+        menu.classList.toggle("hidden");
+        menuIcon.classList.toggle("hidden");
+        closeIcon.classList.toggle("hidden");
+      });
+    </script>
+
+    <!-- Content -->
+    <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center pt-32 pb-20 md:pt-40">
+      <div class="w-full max-w-[720px]">
+        <div class="mb-4">
+          <a href="./madobe.html" class="text-sm text-primary hover:underline transition-colors">&larr; Madobe に戻る</a>
+        </div>
+        <h1 class="text-3xl md:text-4xl font-bold mb-3">Madobe AI倫理ポリシー</h1>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-10">最終更新日: 2026年2月20日</p>
+
+        <div class="flex flex-col gap-10 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+
+          <!-- はじめに -->
+          <section>
+            <p>Madobe（窓辺）は、「スマホの中にキャラクターが住んでいる」をコンセプトに、AIの力を使って自分だけのキャラクター壁紙をお届けするアプリです。AIという技術を活用するからこそ、私たちはその使い方に責任を持ちたいと考えています。</p>
+            <p class="mt-3">このページでは、Madobeが大切にしている5つの方針をお伝えします。</p>
+          </section>
+
+          <!-- 1. 透明性 -->
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-4">1. 透明性 — AIであることを隠しません</h2>
+            <p class="mb-3">Madobeで生成される壁紙は、すべてAI（人工知能）によって作られています。私たちはこの事実を隠しません。</p>
+            <ul class="list-disc list-inside flex flex-col gap-2">
+              <li>Madobeは、Tensor.Art APIを画像生成エンジンとして使用しています（SDXL系モデル、Firebase Cloud Functions経由）。</li>
+              <li>ユーザーのキャラクター設定（外見・服装・性格）、環境設定（部屋タイプ・家具・雰囲気）、現在の時間帯情報をもとに、システムがプロンプトを自動生成します。</li>
+              <li>生成された壁紙は人間が描いたものではなく、AIによる自動生成物です。</li>
+              <li>使用している技術や仕組みについて、ユーザーの皆さまにわかりやすく情報を公開していきます。</li>
+            </ul>
+            <p class="mt-3">「どんな技術で作られているのか」を知っていただくことが、信頼の第一歩だと考えています。</p>
+          </section>
+
+          <!-- 2. クリエイターへのリスペクト -->
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-4">2. クリエイターへのリスペクト — 創作活動を大切にします</h2>
+            <p class="mb-3">AIによる画像生成は、クリエイターの皆さまの活動と無関係ではありません。Madobeは、クリエイターの仕事を置き換えることを目的としたアプリではありません。</p>
+            <ul class="list-disc list-inside flex flex-col gap-2">
+              <li>Madobeの壁紙は、「自分だけのキャラクターと一緒に暮らす」という個人的な楽しみのためのものです。</li>
+              <li>特定のアーティストやイラストレーターのスタイルを意図的に模倣することは、プロンプト設計段階で排除しています。固定プロンプト構造を採用し、スタイル模倣に繋がる自由入力を制限しています。</li>
+              <li>キャラクターはすべてユーザーがオリジナル設定で作成するため、既存の著作物を侵害するものではありません。</li>
+              <li>商用利用を目的としたサービスではなく、クリエイターの方々のお仕事と直接競合するものではありません。</li>
+            </ul>
+            <p class="mt-3">AIは道具のひとつです。クリエイターの方々が生み出す作品の価値は、AIでは代替できないものだと私たちは考えています。</p>
+          </section>
+
+          <!-- 3. 安全性 -->
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-4">3. 安全性 — 不適切なコンテンツを生まないために</h2>
+            <p class="mb-3">AIは便利な技術ですが、使い方によっては不適切なコンテンツが生成されるリスクがあります。Madobeでは、構造的に安全な利用環境を実現しています。</p>
+            <ul class="list-disc list-inside flex flex-col gap-2">
+              <li>プロンプトはシステムが自動生成する仕組みのため、ユーザーが自由にテキストを入力することはありません。これにより、意図的に不適切なコンテンツを生成させることを防いでいます。</li>
+              <li>キャラクター設定の選択肢をあらかじめ制限することで、不適切な外見や状況が生成されないよう設計しています。</li>
+              <li>ネガティブプロンプトにより、暴力的・性的な要素を生成結果から除外しています。</li>
+              <li>児童の搾取に関連するコンテンツは一切生成できない仕組みになっています。</li>
+              <li>万が一、不適切な画像が生成された場合や問題を発見された場合は、アプリ内の報告機能からお知らせください。</li>
+            </ul>
+            <p class="mt-3">利用規約でも、禁止されるコンテンツの内容を具体的に定めています。安全で気持ちよく使えるアプリを目指しています。</p>
+          </section>
+
+          <!-- 4. プライバシー -->
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-4">4. プライバシー — あなたの情報を大切に扱います</h2>
+            <p class="mb-3">Madobeは、ユーザーの皆さまのプライバシーを尊重しています。</p>
+            <ul class="list-disc list-inside flex flex-col gap-2">
+              <li>キャラクター設定データ（外見・服装・性格など）はFirebase Firestoreに保存されますが、個人を特定する情報は含まれません。</li>
+              <li>プロンプトは画像生成時にTensor.Art APIに送信されますが、個人情報は一切含まれない構造になっています。</li>
+              <li>天気連動機能で使用する位置情報はおおまかな位置情報のみであり、精密な位置の追跡は行いません。</li>
+              <li>ユーザーはいつでもアカウントを削除し、関連データの消去を求めることができます。</li>
+            </ul>
+            <p class="mt-3">プライバシーの詳細については、<a href="./madobe-privacy.html" class="text-primary hover:underline transition-colors">プライバシーポリシー</a>をご確認ください。</p>
+          </section>
+
+          <!-- 5. 継続的な改善 -->
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-4">5. 継続的な改善 — より良いサービスを目指して</h2>
+            <p class="mb-3">AI技術は日々進化しており、それに伴う社会的な議論も変化し続けています。私たちは、一度ポリシーを作って終わりにするのではなく、継続的に改善していきます。</p>
+            <ul class="list-disc list-inside flex flex-col gap-2">
+              <li>ユーザーの皆さまからのフィードバックやご意見をもとに、安全対策と倫理基準を定期的に見直します。</li>
+              <li>AI技術の発展、関連する法規制の変化、そして社会的な議論を注視し、必要に応じてこのポリシーを更新します。</li>
+              <li>日本のAI推進法（2025年5月施行）をはじめとする法令を遵守し、透明性と安全性の確保に努めます。</li>
+              <li>新しい安全対策技術が利用可能になった場合は、積極的に導入を検討します。</li>
+            </ul>
+            <p class="mt-3">Madobeは個人開発のアプリですが、だからこそ、ユーザーの皆さまの声に素早く対応できることが強みだと考えています。</p>
+          </section>
+
+          <!-- お問い合わせ -->
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-4">お問い合わせ</h2>
+            <p class="mb-3">このAI倫理ポリシーに関するご質問やご意見がありましたら、お気軽にご連絡ください。</p>
+            <p>メールアドレス: <a href="mailto:contact@fuwalief.com" class="text-primary hover:underline transition-colors">contact@fuwalief.com</a></p>
+          </section>
+
+          <!-- 関連リンク -->
+          <section>
+            <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-4">関連ページ</h2>
+            <ul class="flex flex-col gap-2">
+              <li><a href="./madobe-privacy.html" class="text-primary hover:underline transition-colors">Madobe プライバシーポリシー</a></li>
+              <li><a href="./madobe-terms.html" class="text-primary hover:underline transition-colors">Madobe 利用規約</a></li>
+              <li><a href="./madobe-delete-account.html" class="text-primary hover:underline transition-colors">Madobe アカウント削除</a></li>
+            </ul>
+          </section>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-background-light dark:bg-background-dark border-t border-[#e7f3eb] dark:border-[#1e3a29] py-12 mt-auto">
+      <div class="px-4 md:px-10 lg:px-40 flex justify-center">
+        <div class="flex flex-col items-center gap-6 text-center max-w-[960px] w-full">
+          <a href="./" class="flex items-center">
+            <img src="assets/full-logo.png" alt="Fuwalief" class="h-7" />
+          </a>
+          <div class="flex gap-6 text-sm text-gray-600 dark:text-gray-400">
+            <a class="hover:text-primary transition-colors" href="./privacy.html">プライバシーポリシー</a>
+            <a class="hover:text-primary transition-colors" href="./terms.html">利用規約</a>
+            <a class="hover:text-primary transition-colors" href="./#contact">お問い合わせ</a>
+          </div>
+          <p class="text-xs text-gray-400 dark:text-gray-600">
+            &copy; 2025 Fuwalief Co., Ltd.（法人登記準備中） All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
