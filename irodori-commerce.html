@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html class="light" lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Irodori 特定商取引法に基づく表記 - Fuwalief</title>
+  <meta name="description" content="Irodori（AI壁紙生成アプリ）の特定商取引法に基づく表記です。" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#2bee6c",
+            "primary-hover": "#25d05e",
+            "background-light": "#f6f8f6",
+            "background-dark": "#102216",
+            "text-main": "#0d1b12",
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans", "Noto Sans JP", "sans-serif"],
+            "body": ["Noto Sans JP", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    body { font-family: "Noto Sans JP", "Plus Jakarta Sans", sans-serif; }
+    h1, h2, h3, h4, h5, h6 { font-family: "Plus Jakarta Sans", "Noto Sans JP", sans-serif; }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d1b12] dark:text-white transition-colors duration-200">
+  <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden font-display">
+
+    <!-- Navigation -->
+    <div class="fixed top-4 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+      <div class="pointer-events-auto w-full max-w-[960px]">
+        <div class="bg-white/90 dark:bg-[#102216]/90 backdrop-blur-md border border-[#e7f3eb] dark:border-[#2bee6c]/20 shadow-xl shadow-black/5 rounded-full px-6 py-3 transition-all">
+          <header class="flex w-full items-center justify-between whitespace-nowrap">
+            <a href="./" class="flex items-center gap-1 no-underline">
+              <img src="assets/full-logo.png" alt="Fuwalief" class="h-8" />
+            </a>
+            <div class="flex flex-1 justify-end gap-4 md:gap-8 items-center">
+              <div class="hidden md:flex items-center gap-9">
+                <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200" href="./">ホーム</a>
+                <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200" href="./#mission">ミッション</a>
+                <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200" href="./products.html">プロダクト</a>
+                <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200" href="./#company">会社概要</a>
+              </div>
+              <a href="./#contact" class="hidden md:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary text-[#0d1b12] text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity no-underline">
+                <span class="truncate">お問い合わせ</span>
+              </a>
+              <button id="menu-toggle" class="md:hidden flex items-center justify-center w-10 h-10 rounded-full hover:bg-[#e7f3eb] dark:hover:bg-[#1e3a29] transition-colors" aria-label="メニューを開く">
+                <svg id="menu-icon" class="w-6 h-6 text-[#0d1b12] dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                <svg id="close-icon" class="hidden w-6 h-6 text-[#0d1b12] dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+              </button>
+            </div>
+          </header>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden mt-2 bg-white/95 dark:bg-[#102216]/95 backdrop-blur-md border border-[#e7f3eb] dark:border-[#2bee6c]/20 shadow-xl rounded-2xl px-6 py-4">
+          <nav class="flex flex-col gap-1">
+            <a class="text-sm font-medium py-3 hover:text-primary transition-colors dark:text-gray-200" href="./">ホーム</a>
+            <a class="text-sm font-medium py-3 hover:text-primary transition-colors dark:text-gray-200" href="./#mission">ミッション</a>
+            <a class="text-sm font-medium py-3 hover:text-primary transition-colors dark:text-gray-200" href="./products.html">プロダクト</a>
+            <a class="text-sm font-medium py-3 hover:text-primary transition-colors dark:text-gray-200" href="./#company">会社概要</a>
+            <a href="./#contact" class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary text-[#0d1b12] text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity no-underline mt-2">
+              お問い合わせ
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.getElementById("menu-toggle").addEventListener("click", function() {
+        var menu = document.getElementById("mobile-menu");
+        var menuIcon = document.getElementById("menu-icon");
+        var closeIcon = document.getElementById("close-icon");
+        menu.classList.toggle("hidden");
+        menuIcon.classList.toggle("hidden");
+        closeIcon.classList.toggle("hidden");
+      });
+    </script>
+
+    <!-- Content -->
+    <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center pt-32 pb-20 md:pt-40">
+      <div class="w-full max-w-[720px]">
+        <div class="mb-4">
+          <a href="./irodori.html" class="text-sm text-primary hover:underline transition-colors">&larr; Irodori に戻る</a>
+        </div>
+        <h1 class="text-3xl md:text-4xl font-bold mb-10">特定商取引法に基づく表記</h1>
+
+        <div class="flex flex-col gap-0 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+
+          <!-- テーブル形式 -->
+          <div class="divide-y divide-[#e7f3eb] dark:divide-[#1e3a29] border-t border-b border-[#e7f3eb] dark:border-[#1e3a29]">
+
+            <div class="flex flex-col md:flex-row py-5 gap-1 md:gap-0">
+              <div class="md:w-48 shrink-0 font-bold text-[#0d1b12] dark:text-white">販売事業者</div>
+              <div class="flex-1">田中陽祐（屋号：Fuwalief）（法人登記準備中）</div>
+            </div>
+
+            <div class="flex flex-col md:flex-row py-5 gap-1 md:gap-0">
+              <div class="md:w-48 shrink-0 font-bold text-[#0d1b12] dark:text-white">所在地</div>
+              <div class="flex-1">
+                <p>特定商取引法第11条ただし書きに基づき省略しております。</p>
+                <p class="mt-1">お取引に際して必要な場合は、請求いただければ遅滞なく開示いたします。</p>
+                <p class="mt-1">開示のご請求先: <a href="mailto:contact@fuwalief.com" class="text-primary hover:underline">contact@fuwalief.com</a></p>
+              </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row py-5 gap-1 md:gap-0">
+              <div class="md:w-48 shrink-0 font-bold text-[#0d1b12] dark:text-white">電話番号</div>
+              <div class="flex-1">
+                <p>特定商取引法第11条ただし書きに基づき省略しております。</p>
+                <p class="mt-1">お取引に際して必要な場合は、請求いただければ遅滞なく開示いたします。</p>
+                <p class="mt-1">開示のご請求先: <a href="mailto:contact@fuwalief.com" class="text-primary hover:underline">contact@fuwalief.com</a></p>
+              </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row py-5 gap-1 md:gap-0">
+              <div class="md:w-48 shrink-0 font-bold text-[#0d1b12] dark:text-white">メールアドレス</div>
+              <div class="flex-1"><a href="mailto:contact@fuwalief.com" class="text-primary hover:underline">contact@fuwalief.com</a></div>
+            </div>
+
+            <div class="flex flex-col md:flex-row py-5 gap-1 md:gap-0">
+              <div class="md:w-48 shrink-0 font-bold text-[#0d1b12] dark:text-white">販売URL</div>
+              <div class="flex-1"><a href="https://play.google.com/store/apps/details?id=com.fuwalief.dynamicwallpaper" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline break-all">Google Play Store</a></div>
+            </div>
+
+            <div class="flex flex-col md:flex-row py-5 gap-1 md:gap-0">
+              <div class="md:w-48 shrink-0 font-bold text-[#0d1b12] dark:text-white">販売価格</div>
+              <div class="flex-1">
+                <p>アプリのダウンロード: 無料</p>
+                <div class="mt-3">
+                  <p class="font-semibold text-[#0d1b12] dark:text-white">定期購入（サブスクリプション）</p>
+                  <ul class="mt-1 flex flex-col gap-0.5">
+                    <li>プレミアムプラン（月額）: &yen;480（税込）</li>
+                    <li>プレミアムプラン（年額）: &yen;3,800（税込）</li>
+                  </ul>
+                  <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">※ 初回7日間の無料トライアル付き</p>
+                </div>
+                <div class="mt-3">
+                  <p class="font-semibold text-[#0d1b12] dark:text-white">クレジット購入（1回限りのアイテム）</p>
+                  <ul class="mt-1 flex flex-col gap-0.5">
+                    <li>10クレジット: &yen;160（税込）</li>
+                    <li>30クレジット: &yen;400（税込）</li>
+                    <li>80クレジット: &yen;900（税込）</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row py-5 gap-1 md:gap-0">
+              <div class="md:w-48 shrink-0 font-bold text-[#0d1b12] dark:text-white">販売価格以外に必要な費用</div>
+              <div class="flex-1">
+                <ul class="flex flex-col gap-0.5">
+                  <li>インターネット接続に必要な通信料（お客様のご負担）</li>
+                  <li>上記以外の追加料金はございません</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row py-5 gap-1 md:gap-0">
+              <div class="md:w-48 shrink-0 font-bold text-[#0d1b12] dark:text-white">お支払い方法</div>
+              <div class="flex-1">Google Playが提供する決済手段（クレジットカード、デビットカード、キャリア決済、Google Playギフトカード等）</div>
+            </div>
+
+            <div class="flex flex-col md:flex-row py-5 gap-1 md:gap-0">
+              <div class="md:w-48 shrink-0 font-bold text-[#0d1b12] dark:text-white">お支払い時期</div>
+              <div class="flex-1">Google Playの決済画面にて購入を確定した時点</div>
+            </div>
+
+            <div class="flex flex-col md:flex-row py-5 gap-1 md:gap-0">
+              <div class="md:w-48 shrink-0 font-bold text-[#0d1b12] dark:text-white">商品の引渡時期</div>
+              <div class="flex-1">
+                <ul class="flex flex-col gap-0.5">
+                  <li>クレジット購入: 決済完了後、即時にアプリ内クレジットとして付与</li>
+                  <li>定期購入: 決済完了後、即時にプレミアム機能が利用可能</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row py-5 gap-1 md:gap-0">
+              <div class="md:w-48 shrink-0 font-bold text-[#0d1b12] dark:text-white">返品・キャンセルについて</div>
+              <div class="flex-1">
+                <ul class="flex flex-col gap-2">
+                  <li>デジタルコンテンツの性質上、購入後の返品・返金は原則としてお受けできません</li>
+                  <li>定期購入のキャンセル: Google Playの設定画面からいつでもキャンセル可能です。キャンセル後も現在の請求期間の終了まではプレミアム機能をご利用いただけます</li>
+                  <li>無料トライアル期間中のキャンセル: トライアル期間中にキャンセルすれば、料金は発生しません</li>
+                  <li>Google Playの返金ポリシーに基づく返金リクエストは、Google Playサポートにお問い合わせください</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row py-5 gap-1 md:gap-0">
+              <div class="md:w-48 shrink-0 font-bold text-[#0d1b12] dark:text-white">動作環境</div>
+              <div class="flex-1">
+                <ul class="flex flex-col gap-0.5">
+                  <li>Android 8.0（API 26）以上</li>
+                  <li>インターネット接続が必要</li>
+                  <li>Google Playサービスが利用可能な端末</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row py-5 gap-1 md:gap-0">
+              <div class="md:w-48 shrink-0 font-bold text-[#0d1b12] dark:text-white">特記事項</div>
+              <div class="flex-1">
+                <ul class="flex flex-col gap-2">
+                  <li>アプリ内クレジットは、壁紙生成の対価として消費されるポイントであり、現金への換金・他ユーザーへの譲渡はできません</li>
+                  <li>AI生成画像の品質は、入力プロンプトやサーバーの状況により異なる場合があります</li>
+                  <li>生成に失敗した場合、消費したクレジットは自動的に返還されます</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-background-light dark:bg-background-dark border-t border-[#e7f3eb] dark:border-[#1e3a29] py-12 mt-auto">
+      <div class="px-4 md:px-10 lg:px-40 flex justify-center">
+        <div class="flex flex-col items-center gap-6 text-center max-w-[960px] w-full">
+          <a href="./" class="flex items-center">
+            <img src="assets/full-logo.png" alt="Fuwalief" class="h-7" />
+          </a>
+          <div class="flex gap-6 text-sm text-gray-600 dark:text-gray-400">
+            <a class="hover:text-primary transition-colors" href="./privacy.html">プライバシーポリシー</a>
+            <a class="hover:text-primary transition-colors" href="./terms.html">利用規約</a>
+            <a class="hover:text-primary transition-colors" href="./#contact">お問い合わせ</a>
+          </div>
+          <p class="text-xs text-gray-400 dark:text-gray-600">
+            &copy; 2025 Fuwalief Co., Ltd.（法人登記準備中） All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

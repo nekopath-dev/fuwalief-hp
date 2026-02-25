@@ -18,6 +18,7 @@ Fuwalief（法人登記準備中）のコーポレートサイト。GitHub Pages
 - `irodori-delete-account.html` - Irodori アカウント削除案内
 - `irodori-beta.html` - Irodori クローズドベータテスト参加方法
 - `irodori-ai-ethics.html` - Irodori AI倫理ポリシー
+- `irodori-commerce.html` - Irodori 特定商取引法に基づく表記
 - `madobe.html` - Madobe プロダクト紹介ページ
 - `madobe-privacy.html` - Madobe プライバシーポリシー
 - `madobe-terms.html` - Madobe 利用規約
@@ -82,6 +83,8 @@ Fuwalief（法人登記準備中）のコーポレートサイト。GitHub Pages
 - [x] products.html にMadobeカード追加
 - [x] Madobe関連ページ確認・整備（privacy / terms / delete-account / ai-ethics）
 - [x] アプリ詳細.md 削除
+- [x] irodori-commerce.html（特定商取引法に基づく表記ページ）作成
+- [x] Madobeアプリアイコン追加（madobe.html / products.html）
 
 ### 要対応
 - [ ] OGPメタタグの追加（OGP画像の用意後）
