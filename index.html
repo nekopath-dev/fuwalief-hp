@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html class="light" lang="ja">
+
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>Fuwalief - 優しいテクノロジーで不安を取り除く</title>
   <meta name="description" content="Fuwaliefは、デジタルウェルビーイングを通じて、あなたの日常に安らぎをお届けします。" />
   <link rel="icon" type="image/png" href="assets/logo.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+    rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script>
     tailwind.config = {
@@ -36,57 +40,146 @@
     }
   </script>
   <style>
-    body { font-family: "Noto Sans JP", "Plus Jakarta Sans", sans-serif; }
-    h1, h2, h3, h4, h5, h6 { font-family: "Plus Jakarta Sans", "Noto Sans JP", sans-serif; }
-    @keyframes fadeInUp { from { opacity:0; transform:translateY(24px) } to { opacity:1; transform:translateY(0) } }
-    @keyframes fadeIn { from { opacity:0 } to { opacity:1 } }
-    @keyframes scaleIn { from { opacity:0; transform:scale(0.96) } to { opacity:1; transform:scale(1) } }
-    [data-animate] { opacity: 0; }
-    .fade-in-up.is-visible { animation: fadeInUp 0.7s ease-out both; }
-    .fade-in.is-visible { animation: fadeIn 0.7s ease-out both; }
-    .scale-in.is-visible { animation: scaleIn 0.6s ease-out both; }
-    .delay-1 { animation-delay: 0.1s; }
-    .delay-2 { animation-delay: 0.2s; }
-    .delay-3 { animation-delay: 0.3s; }
-    .delay-4 { animation-delay: 0.4s; }
-    .delay-5 { animation-delay: 0.5s; }
+    body {
+      font-family: "Noto Sans JP", "Plus Jakarta Sans", sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Plus Jakarta Sans", "Noto Sans JP", sans-serif;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.96)
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+
+    [data-animate] {
+      opacity: 0;
+    }
+
+    .fade-in-up.is-visible {
+      animation: fadeInUp 0.7s ease-out both;
+    }
+
+    .fade-in.is-visible {
+      animation: fadeIn 0.7s ease-out both;
+    }
+
+    .scale-in.is-visible {
+      animation: scaleIn 0.6s ease-out both;
+    }
+
+    .delay-1 {
+      animation-delay: 0.1s;
+    }
+
+    .delay-2 {
+      animation-delay: 0.2s;
+    }
+
+    .delay-3 {
+      animation-delay: 0.3s;
+    }
+
+    .delay-4 {
+      animation-delay: 0.4s;
+    }
+
+    .delay-5 {
+      animation-delay: 0.5s;
+    }
   </style>
 </head>
+
 <body class="bg-background-light dark:bg-background-dark text-[#0d1b12] dark:text-white transition-colors duration-200">
   <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden font-display">
 
     <!-- Navigation -->
     <div class="fixed top-4 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
       <div class="pointer-events-auto w-full max-w-[960px]">
-        <div class="bg-white/90 dark:bg-[#102216]/90 backdrop-blur-md border border-[#e7f3eb] dark:border-[#2bee6c]/20 shadow-xl shadow-black/5 rounded-full px-6 py-3 transition-all">
+        <div
+          class="bg-white/90 dark:bg-[#102216]/90 backdrop-blur-md border border-[#e7f3eb] dark:border-[#2bee6c]/20 shadow-xl shadow-black/5 rounded-full px-6 py-3 transition-all">
           <header class="flex w-full items-center justify-between whitespace-nowrap">
             <a href="./" class="flex items-center gap-1 no-underline">
               <img src="assets/full-logo.png" alt="Fuwalief" class="h-8" />
             </a>
             <div class="flex flex-1 justify-end gap-4 md:gap-8 items-center">
               <div class="hidden md:flex items-center gap-9">
-                <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200" href="./">ホーム</a>
-                <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200" href="./#mission">ミッション</a>
-                <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200" href="./products.html">プロダクト</a>
-                <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200" href="./#company">会社概要</a>
+                <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200"
+                  href="./">ホーム</a>
+                <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200"
+                  href="./#mission">ミッション</a>
+                <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200"
+                  href="./products.html">プロダクト</a>
+                <a class="text-sm font-medium leading-normal hover:text-primary transition-colors dark:text-gray-200"
+                  href="./#company">会社概要</a>
               </div>
-              <a href="./#contact" class="hidden md:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary text-[#0d1b12] text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity no-underline">
+              <a href="./#contact"
+                class="hidden md:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary text-[#0d1b12] text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity no-underline">
                 <span class="truncate">お問い合わせ</span>
               </a>
-              <button id="menu-toggle" class="md:hidden flex items-center justify-center w-10 h-10 rounded-full hover:bg-[#e7f3eb] dark:hover:bg-[#1e3a29] transition-colors" aria-label="メニューを開く">
-                <svg id="menu-icon" class="w-6 h-6 text-[#0d1b12] dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
-                <svg id="close-icon" class="hidden w-6 h-6 text-[#0d1b12] dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+              <button id="menu-toggle"
+                class="md:hidden flex items-center justify-center w-10 h-10 rounded-full hover:bg-[#e7f3eb] dark:hover:bg-[#1e3a29] transition-colors"
+                aria-label="メニューを開く">
+                <svg id="menu-icon" class="w-6 h-6 text-[#0d1b12] dark:text-white" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <svg id="close-icon" class="hidden w-6 h-6 text-[#0d1b12] dark:text-white" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
               </button>
             </div>
           </header>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden mt-2 bg-white/95 dark:bg-[#102216]/95 backdrop-blur-md border border-[#e7f3eb] dark:border-[#2bee6c]/20 shadow-xl rounded-2xl px-6 py-4">
+        <div id="mobile-menu"
+          class="hidden md:hidden mt-2 bg-white/95 dark:bg-[#102216]/95 backdrop-blur-md border border-[#e7f3eb] dark:border-[#2bee6c]/20 shadow-xl rounded-2xl px-6 py-4">
           <nav class="flex flex-col gap-1">
-            <a class="text-sm font-medium py-3 hover:text-primary transition-colors dark:text-gray-200" href="./">ホーム</a>
-            <a class="text-sm font-medium py-3 hover:text-primary transition-colors dark:text-gray-200" href="./#mission">ミッション</a>
-            <a class="text-sm font-medium py-3 hover:text-primary transition-colors dark:text-gray-200" href="./products.html">プロダクト</a>
-            <a class="text-sm font-medium py-3 hover:text-primary transition-colors dark:text-gray-200" href="./#company">会社概要</a>
-            <a href="./#contact" class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary text-[#0d1b12] text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity no-underline mt-2">
+            <a class="text-sm font-medium py-3 hover:text-primary transition-colors dark:text-gray-200"
+              href="./">ホーム</a>
+            <a class="text-sm font-medium py-3 hover:text-primary transition-colors dark:text-gray-200"
+              href="./#mission">ミッション</a>
+            <a class="text-sm font-medium py-3 hover:text-primary transition-colors dark:text-gray-200"
+              href="./products.html">プロダクト</a>
+            <a class="text-sm font-medium py-3 hover:text-primary transition-colors dark:text-gray-200"
+              href="./#company">会社概要</a>
+            <a href="./#contact"
+              class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary text-[#0d1b12] text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity no-underline mt-2">
               お問い合わせ
             </a>
           </nav>
@@ -94,7 +187,7 @@
       </div>
     </div>
     <script>
-      document.getElementById("menu-toggle").addEventListener("click", function() {
+      document.getElementById("menu-toggle").addEventListener("click", function () {
         var menu = document.getElementById("mobile-menu");
         var menuIcon = document.getElementById("menu-icon");
         var closeIcon = document.getElementById("close-icon");
@@ -111,23 +204,28 @@
           <div class="flex flex-col-reverse gap-6 md:gap-12 @[864px]:flex-row items-center">
             <div class="flex flex-col gap-6 @[480px]:min-w-[400px] @[480px]:gap-8 flex-1">
               <div class="flex flex-col gap-4 text-left">
-                <h1 data-animate class="fade-in-up text-3xl font-black leading-tight tracking-[-0.033em] @[480px]:text-4xl md:text-5xl lg:text-6xl text-[#0d1b12] dark:text-white">
+                <h1 data-animate
+                  class="fade-in-up text-3xl font-black leading-tight tracking-[-0.033em] @[480px]:text-4xl md:text-5xl lg:text-6xl text-[#0d1b12] dark:text-white">
                   優しいテクノロジーで<br class="hidden sm:block" /><span class="text-primary">不安を取り除く</span>
                 </h1>
-                <h2 data-animate class="fade-in-up delay-1 text-base font-normal leading-relaxed text-gray-600 dark:text-gray-300 md:text-lg">
+                <h2 data-animate
+                  class="fade-in-up delay-1 text-base font-normal leading-relaxed text-gray-600 dark:text-gray-300 md:text-lg">
                   Fuwaliefは、デジタルウェルビーイングを通じて、<br class="hidden md:block" />あなたの日常に安らぎをお届けします。
                 </h2>
               </div>
               <div data-animate class="fade-in-up delay-2 flex gap-4">
-                <a href="#mission" class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-primary text-[#0d1b12] text-base font-bold leading-normal tracking-[0.015em] hover:shadow-lg hover:shadow-primary/30 transition-all no-underline">
+                <a href="#mission"
+                  class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-primary text-[#0d1b12] text-base font-bold leading-normal tracking-[0.015em] hover:shadow-lg hover:shadow-primary/30 transition-all no-underline">
                   <span class="truncate">詳細を見る</span>
                 </a>
-                <a href="#company" class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-white dark:bg-[#1e3a29] border border-[#e7f3eb] dark:border-[#2bee6c]/30 text-[#0d1b12] dark:text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-[#f0f9f4] dark:hover:bg-[#1e3a29]/80 transition-all no-underline">
+                <a href="#company"
+                  class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-white dark:bg-[#1e3a29] border border-[#e7f3eb] dark:border-[#2bee6c]/30 text-[#0d1b12] dark:text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-[#f0f9f4] dark:hover:bg-[#1e3a29]/80 transition-all no-underline">
                   <span class="truncate">About Us</span>
                 </a>
               </div>
             </div>
-            <div data-animate class="fade-in delay-2 w-full flex-1 aspect-square md:aspect-auto md:h-[400px] bg-center bg-no-repeat bg-cover rounded-xl shadow-2xl shadow-primary/10"
+            <div data-animate
+              class="fade-in delay-2 w-full flex-1 aspect-square md:aspect-auto md:h-[400px] bg-center bg-no-repeat bg-cover rounded-xl shadow-2xl shadow-primary/10"
               style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDsWjIC9zHg3G1bn6BzpiWOoVEIDl3DjnorbfCn685G35aVrUNA413ngNwoyeauzoTstRDvR7mOoNqPlI8hQyn8T3WvesC06_cg5hIQI1pSqF2ESeUBITJp2BtdddBgHtGngXYGUz5gMhbhYefi9f6ec1BCvvn9RtkJ08_n351DgRfGDCRr0-f4-3aa_n9UIBJEb9UojX0oCAfAXbubPClUcTk9Ed2ydJpTqhnTV4eWCKRFyvsB1X4pjKWKJKNmjsuZ26VUePKV6AED");'>
             </div>
           </div>
@@ -139,11 +237,14 @@
     <div class="bg-white dark:bg-[#152b1d] py-20 w-full flex justify-center" id="mission">
       <div class="px-4 md:px-10 lg:px-40 w-full max-w-[1280px]">
         <div class="flex flex-col items-center justify-center text-center gap-6 max-w-[720px] mx-auto">
-          <span data-animate class="fade-in-up px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-bold tracking-wide">MISSION</span>
-          <h2 data-animate class="fade-in-up delay-1 text-[#0d1b12] dark:text-white tracking-tight text-3xl md:text-4xl font-bold leading-tight">
+          <span data-animate
+            class="fade-in-up px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-bold tracking-wide">MISSION</span>
+          <h2 data-animate
+            class="fade-in-up delay-1 text-[#0d1b12] dark:text-white tracking-tight text-3xl md:text-4xl font-bold leading-tight">
             安らぎを、すべての人に
           </h2>
-          <p data-animate class="fade-in-up delay-2 text-gray-600 dark:text-gray-300 text-base md:text-lg font-normal leading-relaxed">
+          <p data-animate
+            class="fade-in-up delay-2 text-gray-600 dark:text-gray-300 text-base md:text-lg font-normal leading-relaxed">
             私たちは、テクノロジーの力で現代社会の不安を和らげ、<br class="hidden md:block" />誰もが穏やかな心で過ごせる世界を目指しています。
           </p>
         </div>
@@ -151,7 +252,8 @@
     </div>
 
     <!-- Values Section -->
-    <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-20 bg-background-light dark:bg-background-dark" id="values">
+    <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-20 bg-background-light dark:bg-background-dark"
+      id="values">
       <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
         <div class="flex flex-col gap-10 @container">
           <div data-animate class="fade-in-up flex flex-col gap-4 text-center md:text-left">
@@ -163,8 +265,10 @@
             </p>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div data-animate class="scale-in delay-1 flex flex-1 gap-5 rounded-lg border border-[#cfe7d7] dark:border-[#2bee6c]/20 bg-white dark:bg-[#152b1d] p-8 flex-col hover:-translate-y-1 transition-transform duration-300 shadow-sm hover:shadow-md">
-              <div class="size-12 rounded-full bg-primary/20 flex items-center justify-center text-[#0d1b12] dark:text-white">
+            <div data-animate
+              class="scale-in delay-1 flex flex-1 gap-5 rounded-lg border border-[#cfe7d7] dark:border-[#2bee6c]/20 bg-white dark:bg-[#152b1d] p-8 flex-col hover:-translate-y-1 transition-transform duration-300 shadow-sm hover:shadow-md">
+              <div
+                class="size-12 rounded-full bg-primary/20 flex items-center justify-center text-[#0d1b12] dark:text-white">
                 <span class="material-symbols-outlined text-primary text-2xl">auto_awesome</span>
               </div>
               <div class="flex flex-col gap-2">
@@ -174,8 +278,10 @@
                 </p>
               </div>
             </div>
-            <div data-animate class="scale-in delay-2 flex flex-1 gap-5 rounded-lg border border-[#cfe7d7] dark:border-[#2bee6c]/20 bg-white dark:bg-[#152b1d] p-8 flex-col hover:-translate-y-1 transition-transform duration-300 shadow-sm hover:shadow-md">
-              <div class="size-12 rounded-full bg-primary/20 flex items-center justify-center text-[#0d1b12] dark:text-white">
+            <div data-animate
+              class="scale-in delay-2 flex flex-1 gap-5 rounded-lg border border-[#cfe7d7] dark:border-[#2bee6c]/20 bg-white dark:bg-[#152b1d] p-8 flex-col hover:-translate-y-1 transition-transform duration-300 shadow-sm hover:shadow-md">
+              <div
+                class="size-12 rounded-full bg-primary/20 flex items-center justify-center text-[#0d1b12] dark:text-white">
                 <span class="material-symbols-outlined text-primary text-2xl">favorite</span>
               </div>
               <div class="flex flex-col gap-2">
@@ -185,8 +291,10 @@
                 </p>
               </div>
             </div>
-            <div data-animate class="scale-in delay-3 flex flex-1 gap-5 rounded-lg border border-[#cfe7d7] dark:border-[#2bee6c]/20 bg-white dark:bg-[#152b1d] p-8 flex-col hover:-translate-y-1 transition-transform duration-300 shadow-sm hover:shadow-md">
-              <div class="size-12 rounded-full bg-primary/20 flex items-center justify-center text-[#0d1b12] dark:text-white">
+            <div data-animate
+              class="scale-in delay-3 flex flex-1 gap-5 rounded-lg border border-[#cfe7d7] dark:border-[#2bee6c]/20 bg-white dark:bg-[#152b1d] p-8 flex-col hover:-translate-y-1 transition-transform duration-300 shadow-sm hover:shadow-md">
+              <div
+                class="size-12 rounded-full bg-primary/20 flex items-center justify-center text-[#0d1b12] dark:text-white">
                 <span class="material-symbols-outlined text-primary text-2xl">coffee</span>
               </div>
               <div class="flex flex-col gap-2">
@@ -201,6 +309,88 @@
       </div>
     </div>
 
+    <!-- Products Section -->
+    <div class="bg-white dark:bg-[#152b1d] py-20 w-full flex justify-center" id="products">
+      <div class="px-4 md:px-10 lg:px-40 w-full max-w-[1280px]">
+        <div class="flex flex-col max-w-[960px] mx-auto">
+          <div data-animate class="fade-in-up flex flex-col items-center text-center gap-4 mb-10">
+            <span
+              class="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-bold tracking-wide">PRODUCTS</span>
+            <h2 class="text-[#0d1b12] dark:text-white tracking-tight text-3xl md:text-4xl font-bold leading-tight">
+              Fuwaliefのプロダクト
+            </h2>
+            <p class="text-gray-600 dark:text-gray-300 text-base font-normal leading-normal">
+              日々の生活に心地よいリズムをもたらす、私たちのアプリケーション。
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <!-- Irodori Card -->
+            <a data-animate href="./irodori.html"
+              class="scale-in delay-1 group flex flex-col gap-5 p-8 bg-background-light dark:bg-[#1e3a29]/50 rounded-2xl border border-[#e7f3eb] dark:border-[#2bee6c]/10 hover:border-primary dark:hover:border-primary hover:shadow-lg hover:shadow-primary/10 transition-all no-underline">
+              <div class="flex items-center gap-4">
+                <img src="assets/irodori-icon.png" alt="Irodori" class="w-12 h-12 rounded-xl" />
+                <div>
+                  <h3
+                    class="text-xl font-bold text-[#0d1b12] dark:text-white group-hover:text-primary transition-colors">
+                    Irodori</h3>
+                  <div class="flex gap-2 mt-1">
+                    <span class="px-2 py-0.5 rounded-full bg-primary/15 text-xs font-bold text-primary">Beta</span>
+                    <span
+                      class="px-2 py-0.5 rounded-full bg-[#e7f3eb] dark:bg-[#1e3a29] text-xs font-medium text-[#0d1b12] dark:text-gray-300">Android</span>
+                    <span
+                      class="px-2 py-0.5 rounded-full bg-[#e7f3eb] dark:bg-[#1e3a29] text-xs font-medium text-[#0d1b12] dark:text-gray-300">AI</span>
+                  </div>
+                </div>
+              </div>
+              <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                AIが彩る、あなただけの壁紙。テキストやテンプレートからAIがスマートフォン用の壁紙を自動生成するアプリです。
+              </p>
+              <span
+                class="text-sm font-medium text-primary group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+                詳しく見る
+                <span class="material-symbols-outlined text-lg">arrow_forward</span>
+              </span>
+            </a>
+
+            <!-- Madobe Card -->
+            <a data-animate href="./madobe.html"
+              class="scale-in delay-2 group flex flex-col gap-5 p-8 bg-background-light dark:bg-[#1e3a29]/50 rounded-2xl border border-[#e7f3eb] dark:border-[#2bee6c]/10 hover:border-primary dark:hover:border-primary hover:shadow-lg hover:shadow-primary/10 transition-all no-underline">
+              <div class="flex items-center gap-4">
+                <img src="assets/madobe-icon.png" alt="Madobe" class="w-12 h-12 rounded-xl" />
+                <div>
+                  <h3
+                    class="text-xl font-bold text-[#0d1b12] dark:text-white group-hover:text-primary transition-colors">
+                    Madobe</h3>
+                  <div class="flex gap-2 mt-1">
+                    <span
+                      class="px-2 py-0.5 rounded-full bg-[#e7f3eb] dark:bg-[#1e3a29] text-xs font-medium text-[#0d1b12] dark:text-gray-300">Android</span>
+                    <span
+                      class="px-2 py-0.5 rounded-full bg-[#e7f3eb] dark:bg-[#1e3a29] text-xs font-medium text-[#0d1b12] dark:text-gray-300">AI</span>
+                  </div>
+                </div>
+              </div>
+              <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                スマホの中に、キャラクターが住んでいる。AIがキャラクターの日常を描き、壁紙として届けるアプリです。
+              </p>
+              <span
+                class="text-sm font-medium text-primary group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+                詳しく見る
+                <span class="material-symbols-outlined text-lg">arrow_forward</span>
+              </span>
+            </a>
+
+          </div>
+          <div data-animate class="fade-in-up delay-3 flex justify-center mt-10">
+            <a href="./products.html"
+              class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-white dark:bg-[#1e3a29] border border-[#e7f3eb] dark:border-[#2bee6c]/30 text-[#0d1b12] dark:text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-[#f0f9f4] dark:hover:bg-[#1e3a29]/80 transition-all no-underline">
+              <span class="truncate">すべてのプロダクトを見る</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Company Profile Section -->
     <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-20 bg-white dark:bg-[#152b1d]" id="company">
       <div class="layout-content-container flex flex-col max-w-[800px] flex-1">
@@ -208,17 +398,21 @@
           <h2 class="text-[#0d1b12] dark:text-white text-3xl font-bold mb-4">Company Profile</h2>
           <p class="text-gray-500 dark:text-gray-400">会社概要</p>
         </div>
-        <div data-animate class="fade-in-up delay-1 rounded-xl border border-[#e7f3eb] dark:border-[#2bee6c]/20 overflow-hidden">
+        <div data-animate
+          class="fade-in-up delay-1 rounded-xl border border-[#e7f3eb] dark:border-[#2bee6c]/20 overflow-hidden">
           <dl class="divide-y divide-[#e7f3eb] dark:divide-[#2bee6c]/10 bg-background-light dark:bg-background-dark">
-            <div class="px-6 py-6 sm:grid sm:grid-cols-3 sm:gap-4 hover:bg-white dark:hover:bg-[#1a3525] transition-colors">
+            <div
+              class="px-6 py-6 sm:grid sm:grid-cols-3 sm:gap-4 hover:bg-white dark:hover:bg-[#1a3525] transition-colors">
               <dt class="text-sm font-bold text-[#0d1b12] dark:text-primary">会社名</dt>
               <dd class="mt-1 text-sm text-[#0d1b12] dark:text-white sm:col-span-2 sm:mt-0">株式会社 Fuwalief（法人登記準備中）</dd>
             </div>
-            <div class="px-6 py-6 sm:grid sm:grid-cols-3 sm:gap-4 hover:bg-white dark:hover:bg-[#1a3525] transition-colors">
+            <div
+              class="px-6 py-6 sm:grid sm:grid-cols-3 sm:gap-4 hover:bg-white dark:hover:bg-[#1a3525] transition-colors">
               <dt class="text-sm font-bold text-[#0d1b12] dark:text-primary">代表</dt>
               <dd class="mt-1 text-sm text-[#0d1b12] dark:text-white sm:col-span-2 sm:mt-0">田中 陽祐</dd>
             </div>
-            <div class="px-6 py-6 sm:grid sm:grid-cols-3 sm:gap-4 hover:bg-white dark:hover:bg-[#1a3525] transition-colors">
+            <div
+              class="px-6 py-6 sm:grid sm:grid-cols-3 sm:gap-4 hover:bg-white dark:hover:bg-[#1a3525] transition-colors">
               <dt class="text-sm font-bold text-[#0d1b12] dark:text-primary">事業内容</dt>
               <dd class="mt-1 text-sm text-[#0d1b12] dark:text-white sm:col-span-2 sm:mt-0">アプリケーション開発・運営</dd>
             </div>
@@ -228,11 +422,13 @@
     </div>
 
     <!-- Contact Section -->
-    <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-20 bg-background-light dark:bg-background-dark" id="contact">
+    <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-20 bg-background-light dark:bg-background-dark"
+      id="contact">
       <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
         <div class="flex flex-col items-center gap-10">
           <div data-animate class="fade-in-up text-center max-w-[600px]">
-            <span class="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-bold tracking-wide mb-4">CONTACT</span>
+            <span
+              class="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-bold tracking-wide mb-4">CONTACT</span>
             <h2 class="text-[#0d1b12] dark:text-white tracking-tight text-3xl md:text-4xl font-bold leading-tight mb-4">
               Contact Us
             </h2>
@@ -240,21 +436,31 @@
               Fuwaliefへのお問い合わせはこちらから。<br class="hidden sm:block" />些細なことでもお気軽にご連絡ください。
             </p>
           </div>
-          <div data-animate class="scale-in delay-2 w-full max-w-[600px] bg-white dark:bg-[#152b1d] p-8 md:p-12 rounded-3xl border border-[#e7f3eb] dark:border-[#2bee6c]/20 shadow-sm">
+          <div data-animate
+            class="scale-in delay-2 w-full max-w-[600px] bg-white dark:bg-[#152b1d] p-8 md:p-12 rounded-3xl border border-[#e7f3eb] dark:border-[#2bee6c]/20 shadow-sm">
             <form id="contact-form" class="flex flex-col gap-6">
               <div class="flex flex-col gap-2">
                 <label class="text-sm font-bold text-[#0d1b12] dark:text-white ml-1" for="name">お名前</label>
-                <input class="w-full h-12 rounded-xl border border-[#cfe7d7] dark:border-[#2bee6c]/30 bg-[#f9fbf9] dark:bg-[#1a3525] px-4 text-[#0d1b12] dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all placeholder:text-gray-400" id="name" name="name" placeholder="山田 太郎" type="text" required />
+                <input
+                  class="w-full h-12 rounded-xl border border-[#cfe7d7] dark:border-[#2bee6c]/30 bg-[#f9fbf9] dark:bg-[#1a3525] px-4 text-[#0d1b12] dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all placeholder:text-gray-400"
+                  id="name" name="name" placeholder="山田 太郎" type="text" required />
               </div>
               <div class="flex flex-col gap-2">
                 <label class="text-sm font-bold text-[#0d1b12] dark:text-white ml-1" for="email">メールアドレス</label>
-                <input class="w-full h-12 rounded-xl border border-[#cfe7d7] dark:border-[#2bee6c]/30 bg-[#f9fbf9] dark:bg-[#1a3525] px-4 text-[#0d1b12] dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all placeholder:text-gray-400" id="email" name="email" placeholder="hello@fuwalief.com" type="email" required />
+                <input
+                  class="w-full h-12 rounded-xl border border-[#cfe7d7] dark:border-[#2bee6c]/30 bg-[#f9fbf9] dark:bg-[#1a3525] px-4 text-[#0d1b12] dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all placeholder:text-gray-400"
+                  id="email" name="email" placeholder="hello@fuwalief.com" type="email" required />
               </div>
               <div class="flex flex-col gap-2">
                 <label class="text-sm font-bold text-[#0d1b12] dark:text-white ml-1" for="message">お問い合わせ内容</label>
-                <textarea class="w-full rounded-xl border border-[#cfe7d7] dark:border-[#2bee6c]/30 bg-[#f9fbf9] dark:bg-[#1a3525] p-4 text-[#0d1b12] dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all placeholder:text-gray-400 resize-none min-h-[160px]" id="message" name="message" placeholder="ご自由にご記入ください" rows="8" required oninput="this.style.height='auto';this.style.height=this.scrollHeight+'px'"></textarea>
+                <textarea
+                  class="w-full rounded-xl border border-[#cfe7d7] dark:border-[#2bee6c]/30 bg-[#f9fbf9] dark:bg-[#1a3525] p-4 text-[#0d1b12] dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all placeholder:text-gray-400 resize-none min-h-[160px]"
+                  id="message" name="message" placeholder="ご自由にご記入ください" rows="8" required
+                  oninput="this.style.height='auto';this.style.height=this.scrollHeight+'px'"></textarea>
               </div>
-              <button id="submit-btn" class="mt-4 w-full flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 bg-primary text-[#0d1b12] text-base font-bold hover:shadow-lg hover:shadow-primary/30 hover:opacity-95 transition-all" type="submit">
+              <button id="submit-btn"
+                class="mt-4 w-full flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 bg-primary text-[#0d1b12] text-base font-bold hover:shadow-lg hover:shadow-primary/30 hover:opacity-95 transition-all"
+                type="submit">
                 送信する
               </button>
               <p id="form-status" class="text-center text-sm hidden"></p>
@@ -262,7 +468,7 @@
           </div>
           <script>
             const GAS_URL = "https://script.google.com/macros/s/AKfycbweVi4nb2yDc5KUHVjqtwkWOBTf6ODyHPwIwMoynVrNnhG2Zkm72CIj7vpxNoQhRT3G/exec";
-            document.getElementById("contact-form").addEventListener("submit", async function(e) {
+            document.getElementById("contact-form").addEventListener("submit", async function (e) {
               e.preventDefault();
               const btn = document.getElementById("submit-btn");
               const status = document.getElementById("form-status");
@@ -289,7 +495,8 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-background-light dark:bg-background-dark border-t border-[#e7f3eb] dark:border-[#1e3a29] py-12 mt-auto">
+    <footer
+      class="bg-background-light dark:bg-background-dark border-t border-[#e7f3eb] dark:border-[#1e3a29] py-12 mt-auto">
       <div class="px-4 md:px-10 lg:px-40 flex justify-center">
         <div data-animate class="fade-in flex flex-col items-center gap-6 text-center max-w-[960px] w-full">
           <a href="./" class="flex items-center">
@@ -309,10 +516,11 @@
 
   </div>
   <script>
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('is-visible'); observer.unobserve(e.target); } });
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-visible'); observer.unobserve(e.target); } });
     }, { threshold: 0.15 });
-    document.querySelectorAll('[data-animate]').forEach(function(el) { observer.observe(el); });
+    document.querySelectorAll('[data-animate]').forEach(function (el) { observer.observe(el); });
   </script>
 </body>
+
 </html>
