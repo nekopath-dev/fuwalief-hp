@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irodori ダッシュボード</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: #111;
+            border-bottom: 1px solid #222;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 20px;
+            color: #fff;
+        }
+
+        .header .subtitle {
+            font-size: 12px;
+            color: #888;
+            margin-top: 2px;
+        }
+
+        .header .auth-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .header .auth-section .user-info {
+            font-size: 13px;
+            color: #aaa;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover {
+            opacity: 0.85;
+        }
+
+        .btn-primary {
+            background: #6366f1;
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background: #333;
+            color: #ccc;
+        }
+
+        .login-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+            gap: 16px;
+        }
+
+        .login-screen h2 {
+            color: #fff;
+            font-size: 24px;
+        }
+
+        .login-screen p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .container {
+            padding: 24px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Summary Cards */
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .card {
+            background: #161616;
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .card .label {
+            font-size: 12px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card .value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+            margin-top: 4px;
+        }
+
+        .card .change {
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        .card .change.positive {
+            color: #22c55e;
+        }
+
+        .card .change.negative {
+            color: #ef4444;
+        }
+
+        /* Charts Grid */
+        .charts-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .chart-card {
+            background: #161616;
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .chart-card h3 {
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 16px;
+        }
+
+        .chart-card canvas {
+            max-height: 300px;
+        }
+
+        /* Bottom Grid */
+        .bottom-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        /* Ranking Table */
+        .ranking-table {
+            width: 100%;
+        }
+
+        .ranking-table th {
+            text-align: left;
+            font-size: 11px;
+            color: #666;
+            text-transform: uppercase;
+            padding: 8px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .ranking-table td {
+            padding: 10px 0;
+            border-bottom: 1px solid #1a1a1a;
+            font-size: 14px;
+        }
+
+        .ranking-table td:last-child {
+            text-align: right;
+            color: #6366f1;
+            font-weight: 600;
+        }
+
+        .rank-badge {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #222;
+            text-align: center;
+            line-height: 24px;
+            font-size: 11px;
+            color: #aaa;
+            margin-right: 8px;
+        }
+
+        .rank-badge.gold {
+            background: #92400e;
+            color: #fbbf24;
+        }
+
+        .rank-badge.silver {
+            background: #374151;
+            color: #d1d5db;
+        }
+
+        .rank-badge.bronze {
+            background: #451a03;
+            color: #fb923c;
+        }
+
+        /* Log List */
+        .log-list {
+            list-style: none;
+        }
+
+        .log-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #1a1a1a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+        }
+
+        .log-item .mode-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .mode-tag.prompt {
+            background: #1e3a5f;
+            color: #60a5fa;
+        }
+
+        .mode-tag.template {
+            background: #1a3a2a;
+            color: #4ade80;
+        }
+
+        .mode-tag.random {
+            background: #3b1f4a;
+            color: #c084fc;
+        }
+
+        .mode-tag.auto {
+            background: #3b3a1f;
+            color: #facc15;
+        }
+
+        .log-item .time {
+            color: #666;
+            font-size: 12px;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+
+        .error-msg {
+            text-align: center;
+            padding: 20px;
+            color: #ef4444;
+        }
+
+        @media (max-width: 768px) {
+
+            .charts-grid,
+            .bottom-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .summary-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Login Screen -->
+    <div id="login-screen" class="login-screen" style="display:none;">
+        <h2>Irodori ダッシュボード</h2>
+        <p>管理者アカウントでログインしてください</p>
+        <button class="btn btn-primary" onclick="signIn()">Googleでログイン</button>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" style="display:none;">
+        <div class="header">
+            <div>
+                <h1>Irodori ダッシュボード</h1>
+                <div class="subtitle" id="last-updated"></div>
+            </div>
+            <div class="auth-section">
+                <span class="user-info" id="user-info"></span>
+                <button class="btn btn-secondary" onclick="signOutUser()">ログアウト</button>
+                <button class="btn btn-secondary" onclick="refreshData()">更新</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Summary Cards -->
+            <div class="summary-cards">
+                <div class="card">
+                    <div class="label">今日の生成数</div>
+                    <div class="value" id="today-generations">-</div>
+                    <div class="change" id="today-change"></div>
+                </div>
+                <div class="card">
+                    <div class="label">累計生成数</div>
+                    <div class="value" id="total-generations">-</div>
+                </div>
+                <div class="card">
+                    <div class="label">今日のモード内訳</div>
+                    <div class="value" id="today-mode-summary" style="font-size:16px;">-</div>
+                </div>
+                <div class="card">
+                    <div class="label">今日のモデル内訳</div>
+                    <div class="value" id="today-model-summary" style="font-size:16px;">-</div>
+                </div>
+            </div>
+
+            <!-- Charts -->
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3>日別生成数（過去30日）</h3>
+                    <canvas id="daily-chart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>モード別比率</h3>
+                    <canvas id="mode-chart"></canvas>
+                </div>
+            </div>
+
+            <!-- Bottom Grid -->
+            <div class="bottom-grid">
+                <div class="chart-card">
+                    <h3>テンプレート人気ランキング</h3>
+                    <table class="ranking-table">
+                        <thead>
+                            <tr>
+                                <th>順位</th>
+                                <th>テンプレート</th>
+                                <th>使用回数</th>
+                            </tr>
+                        </thead>
+                        <tbody id="preset-ranking"></tbody>
+                    </table>
+                </div>
+                <div class="chart-card">
+                    <h3>モデル別比率</h3>
+                    <canvas id="model-chart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+        import { getFirestore, doc, getDoc, collection, getDocs, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyClkSF83XsRMZpyL3m7uZTI9CP_lOloFfA",
+            authDomain: "dynamic-wallpaper-8a815.firebaseapp.com",
+            projectId: "dynamic-wallpaper-8a815",
+            storageBucket: "dynamic-wallpaper-8a815.firebasestorage.app",
+            messagingSenderId: "1042163838640",
+            appId: "1:1042163838640:android:25e1857343f28e57971575"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // 管理者UIDホワイトリスト（あなたのFirebase Auth UIDを追加）
+        const ADMIN_UIDS = ["oTLfaPCcKWM4Atuzpy3shIzt3qD3"];
+
+        let dailyChart = null;
+        let modeChart = null;
+        let modelChart = null;
+
+        // テンプレート名マッピング
+        const PRESET_NAMES = {
+            tokyo: "東京", osaka: "大阪", kyoto: "京都", hiroshima: "広島",
+            fukuoka: "福岡", sapporo: "札幌", nagoya: "名古屋", yokohama: "横浜",
+            kobe: "神戸", okinawa: "沖縄", fuji: "富士山", ocean: "海",
+            forest: "森", lake: "湖", mountain: "山", geometric: "幾何学",
+            colorful: "カラフル", minimal: "ミニマル", cyberfluid: "サイバーフルイド",
+            goldenhour: "ゴールデンアワー", midnight: "ミッドナイト", neogeo: "ネオジオ"
+        };
+
+        // Auth
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // 管理者チェック（ホワイトリストが空の場合はログインした全員を許可）
+                if (ADMIN_UIDS.length > 0 && !ADMIN_UIDS.includes(user.uid)) {
+                    alert("管理者アカウントではありません");
+                    signOut(auth);
+                    return;
+                }
+                document.getElementById("login-screen").style.display = "none";
+                document.getElementById("dashboard").style.display = "block";
+                document.getElementById("user-info").textContent = user.email;
+                refreshData();
+            } else {
+                document.getElementById("login-screen").style.display = "flex";
+                document.getElementById("dashboard").style.display = "none";
+            }
+        });
+
+        window.signIn = () => {
+            const provider = new GoogleAuthProvider();
+            signInWithPopup(auth, provider).catch(e => alert("ログインエラー: " + e.message));
+        };
+
+        window.signOutUser = () => {
+            signOut(auth);
+        };
+
+        window.refreshData = async () => {
+            document.getElementById("last-updated").textContent = "読み込み中...";
+            try {
+                await Promise.all([loadOverview(), loadDailyData(), loadPresetRanking()]);
+                document.getElementById("last-updated").textContent = "最終更新: " + new Date().toLocaleString("ja-JP");
+            } catch (e) {
+                console.error("Data load error:", e);
+                document.getElementById("last-updated").textContent = "データ読み込みエラー";
+            }
+        };
+
+        async function loadOverview() {
+            const overviewDoc = await getDoc(doc(db, "analytics", "overview"));
+            if (overviewDoc.exists()) {
+                const data = overviewDoc.data();
+                document.getElementById("total-generations").textContent =
+                    (data.totalGenerations || 0).toLocaleString();
+            }
+        }
+
+        async function loadDailyData() {
+            const dates = [];
+            const values = [];
+            const today = new Date();
+
+            let todayData = null;
+            let yesterdayData = null;
+
+            // 累計モード/モデル集計
+            let totalModes = { prompt: 0, random: 0, template: 0, auto: 0 };
+            let totalModels = { fast: 0, quality: 0 };
+
+            for (let i = 29; i >= 0; i--) {
+                const d = new Date(today);
+                d.setDate(d.getDate() - i);
+                const dateKey = d.toISOString().split("T")[0];
+                dates.push(dateKey.substring(5)); // "MM-DD"
+
+                try {
+                    const dayDoc = await getDoc(doc(db, `analytics/daily/${dateKey}/summary`));
+                    if (dayDoc.exists()) {
+                        const data = dayDoc.data();
+                        const count = data.totalGenerations || 0;
+                        values.push(count);
+
+                        totalModes.prompt += data.mode_prompt || 0;
+                        totalModes.random += data.mode_random || 0;
+                        totalModes.template += data.mode_template || 0;
+                        totalModes.auto += data.mode_auto || 0;
+                        totalModels.fast += data.model_fast || 0;
+                        totalModels.quality += data.model_quality || 0;
+
+                        if (i === 0) todayData = data;
+                        if (i === 1) yesterdayData = data;
+                    } else {
+                        values.push(0);
+                    }
+                } catch (e) {
+                    values.push(0);
+                }
+            }
+
+            // Today summary
+            const todayCount = todayData?.totalGenerations || 0;
+            const yesterdayCount = yesterdayData?.totalGenerations || 0;
+            document.getElementById("today-generations").textContent = todayCount.toLocaleString();
+
+            if (yesterdayCount > 0) {
+                const changePercent = Math.round(((todayCount - yesterdayCount) / yesterdayCount) * 100);
+                const changeEl = document.getElementById("today-change");
+                changeEl.textContent = `${changePercent >= 0 ? "+" : ""}${changePercent}% 昨日比`;
+                changeEl.className = "change " + (changePercent >= 0 ? "positive" : "negative");
+            }
+
+            // Today mode summary
+            if (todayData) {
+                const parts = [];
+                if (todayData.mode_prompt) parts.push(`P:${todayData.mode_prompt}`);
+                if (todayData.mode_template) parts.push(`T:${todayData.mode_template}`);
+                if (todayData.mode_random) parts.push(`R:${todayData.mode_random}`);
+                if (todayData.mode_auto) parts.push(`A:${todayData.mode_auto}`);
+                document.getElementById("today-mode-summary").textContent = parts.join(" / ") || "-";
+            }
+
+            // Today model summary
+            if (todayData) {
+                const parts = [];
+                if (todayData.model_fast) parts.push(`Flux:${todayData.model_fast}`);
+                if (todayData.model_quality) parts.push(`Imagen:${todayData.model_quality}`);
+                document.getElementById("today-model-summary").textContent = parts.join(" / ") || "-";
+            }
+
+            // Daily chart
+            if (dailyChart) dailyChart.destroy();
+            dailyChart = new Chart(document.getElementById("daily-chart"), {
+                type: "bar",
+                data: {
+                    labels: dates,
+                    datasets: [{
+                        label: "生成数",
+                        data: values,
+                        backgroundColor: "rgba(99, 102, 241, 0.7)",
+                        borderColor: "#6366f1",
+                        borderWidth: 1,
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { ticks: { color: "#666", maxRotation: 45 }, grid: { color: "#1a1a1a" } },
+                        y: { ticks: { color: "#666" }, grid: { color: "#1a1a1a" }, beginAtZero: true }
+                    }
+                }
+            });
+
+            // Mode chart
+            const modeTotal = Object.values(totalModes).reduce((a, b) => a + b, 0);
+            if (modeChart) modeChart.destroy();
+            modeChart = new Chart(document.getElementById("mode-chart"), {
+                type: "doughnut",
+                data: {
+                    labels: ["プロンプト", "テンプレート", "ランダム", "自動"],
+                    datasets: [{
+                        data: [totalModes.prompt, totalModes.template, totalModes.random, totalModes.auto],
+                        backgroundColor: ["#60a5fa", "#4ade80", "#c084fc", "#facc15"],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { position: "bottom", labels: { color: "#aaa", padding: 12 } }
+                    }
+                }
+            });
+
+            // Model chart
+            if (modelChart) modelChart.destroy();
+            modelChart = new Chart(document.getElementById("model-chart"), {
+                type: "doughnut",
+                data: {
+                    labels: ["Flux Schnell（高速）", "Imagen 4 Fast（高品質）"],
+                    datasets: [{
+                        data: [totalModels.fast, totalModels.quality],
+                        backgroundColor: ["#6366f1", "#f59e0b"],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { position: "bottom", labels: { color: "#aaa", padding: 12 } }
+                    }
+                }
+            });
+        }
+
+        async function loadPresetRanking() {
+            const tbody = document.getElementById("preset-ranking");
+            tbody.innerHTML = "<tr><td colspan='3' style='color:#666;padding:16px;text-align:center;'>読み込み中...</td></tr>";
+
+            try {
+                const presetsRef = collection(db, "analytics/presets");
+                // Firestore doesn't support orderBy on non-indexed fields without composite index
+                // So we fetch all and sort client-side
+                const snapshot = await getDocs(presetsRef);
+
+                if (snapshot.empty) {
+                    tbody.innerHTML = "<tr><td colspan='3' style='color:#666;padding:16px;text-align:center;'>データなし</td></tr>";
+                    return;
+                }
+
+                const presets = [];
+                snapshot.forEach(doc => {
+                    presets.push({ id: doc.id, ...doc.data() });
+                });
+
+                presets.sort((a, b) => (b.count || 0) - (a.count || 0));
+
+                tbody.innerHTML = presets.map((p, i) => {
+                    const rankClass = i === 0 ? "gold" : i === 1 ? "silver" : i === 2 ? "bronze" : "";
+                    const name = PRESET_NAMES[p.id] || p.id;
+                    return `<tr>
+                        <td><span class="rank-badge ${rankClass}">${i + 1}</span></td>
+                        <td>${name}</td>
+                        <td>${(p.count || 0).toLocaleString()}</td>
+                    </tr>`;
+                }).join("");
+            } catch (e) {
+                console.error("Preset ranking error:", e);
+                tbody.innerHTML = "<tr><td colspan='3' class='error-msg'>読み込みエラー</td></tr>";
+            }
+        }
+    </script>
+</body>
+
+</html>
