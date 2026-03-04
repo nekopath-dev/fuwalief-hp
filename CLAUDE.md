@@ -10,7 +10,7 @@ Fuwalief（法人登記準備中）のコーポレートサイト。GitHub Pages
 - お問い合わせフォーム: Google Apps Script → contact@fuwalief.com
 
 ## サイト構成
-- `index.html` - ホームページ（Hero / Mission / Values / Company Profile / Contact）
+- `index.html` - ホームページ（Hero / Mission / Values / Products / Company Profile / Contact）
 - `products.html` - プロダクト一覧ページ（Irodori / Madobeカード）
 - `irodori.html` - Irodori プロダクト紹介ページ
 - `irodori-privacy.html` - Irodori プライバシーポリシー
@@ -85,6 +85,13 @@ Fuwalief（法人登記準備中）のコーポレートサイト。GitHub Pages
 - [x] アプリ詳細.md 削除
 - [x] irodori-commerce.html（特定商取引法に基づく表記ページ）作成
 - [x] Madobeアプリアイコン追加（madobe.html / products.html）
+- [x] Irodori プライバシーポリシー・利用規約・AI倫理ポリシー内容更新（2026/3/4）
+  - Stability AI → Replicate (Flux Schnell) / Google Vertex AI (Imagen 4 Fast) に変更
+  - プレミアムプラン・クラウドバックアップ・クレジット購入関連の記述追加
+  - フィルタリングシステム4層構造の詳細記述追加
+  - Firestore / Room Database / プロンプト履歴等のデータ保存記述追加
+  - 最終更新日を2026年3月4日に更新
+- [x] index.html にProductsセクション追加（Irodori / Madobeカード、products.htmlと同デザイン）
 
 ### 要対応
 - [ ] OGPメタタグの追加（OGP画像の用意後）
