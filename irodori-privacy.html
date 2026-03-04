@@ -177,8 +177,11 @@
                 <span class="text-xs text-gray-500 dark:text-gray-400 ml-5">Googleのプライバシーポリシー: <a href="https://policies.google.com/privacy?hl=ja" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">https://policies.google.com/privacy?hl=ja</a></span>
               </li>
               <li>
-                <span class="font-medium">Stability AI Ltd.（英国）</span> — AI画像生成エンジンの提供。ユーザーが入力したプロンプト（テキスト）を画像生成のために送信します。生成されたプロンプトおよび画像は、Stability AIのサーバーで処理されます。<br />
-                <span class="text-xs text-gray-500 dark:text-gray-400 ml-5">Stability AIのプライバシーポリシー: <a href="https://stability.ai/privacy-policy" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">https://stability.ai/privacy-policy</a></span>
+                <span class="font-medium">Replicate, Inc.（米国）</span> — AI画像生成エンジン（Flux Schnell）の提供。ユーザーが入力したプロンプト（テキスト）を画像生成のために送信します。生成されたプロンプトおよび画像は、ReplicateのAPIサーバーで処理されます。<br />
+                <span class="text-xs text-gray-500 dark:text-gray-400 ml-5">Replicateのプライバシーポリシー: <a href="https://replicate.com/privacy" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">https://replicate.com/privacy</a></span>
+              </li>
+              <li>
+                <span class="font-medium">Google LLC（米国）— Vertex AI</span> — AI画像生成エンジン（Imagen 4 Fast）の提供（高品質モード）。プロンプトを画像生成のためにGoogle Vertex AIに送信します。
               </li>
             </ul>
             <h3 class="text-sm font-bold text-[#0d1b12] dark:text-white mt-4 mb-2">2. 法令に基づく場合</h3>
@@ -192,7 +195,7 @@
             <p>本アプリでは、以下の外国にある第三者にデータを提供します。</p>
             <ol class="list-decimal list-inside mt-2 flex flex-col gap-2">
               <li><span class="font-medium">Google LLC（アメリカ合衆国）</span> — 個人情報保護制度: セクトラル方式（州法による保護、CCPA等）。Googleは標準契約条項（SCC）等に基づくデータ保護措置を講じています</li>
-              <li><span class="font-medium">Stability AI Ltd.（イギリス）</span> — 個人情報保護制度: UK GDPR（EU GDPRと同等の保護水準）</li>
+              <li><span class="font-medium">Replicate, Inc.（アメリカ合衆国）</span> — 個人情報保護制度: セクトラル方式（州法による保護、CCPA等）。AI画像生成エンジン（Flux Schnell）の提供</li>
             </ol>
             <p class="mt-2">これらの提供は、日本の個人情報保護法第28条に基づき、適切な措置を講じた上で行われます。</p>
           </section>
@@ -216,9 +219,10 @@
           <section>
             <h2 class="text-lg font-bold text-[#0d1b12] dark:text-white mb-3">第8条（データの保存と管理）</h2>
             <ol class="list-decimal list-inside flex flex-col gap-2">
-              <li>Googleアカウント情報およびクレジット情報は、ユーザーの端末内（DataStore）に保存されます。</li>
-              <li>生成された壁紙画像は、Firebase Cloud Storageに一時保存され、端末へのダウンロード後に削除される場合があります。</li>
-              <li>ユーザーが入力したプロンプトは、画像生成のためにFirebase Cloud FunctionsおよびStability AI APIに送信されますが、当方のサーバーに永続的に保存されることはありません。</li>
+              <li>Googleアカウント情報およびクレジット情報は、ユーザーの端末内（DataStore）およびFirebase Cloud Firestore（クラウド）に保存されます。Firestoreへの保存は、アカウント復旧時のデータ同期を目的としています。</li>
+              <li>生成された壁紙画像は、ユーザーの端末内に保存されます。プレミアムプランのユーザーは、Firebase Cloud Storageにバックアップを保存できます。手動バックアップ画像は永続保存され、それ以外の一時保存画像は30日経過後に自動削除されます。</li>
+              <li>ユーザーが入力したプロンプトは、画像生成のためにFirebase Cloud FunctionsおよびReplicate API（Flux Schnell）またはGoogle Vertex AI（Imagen 4 Fast）に送信されますが、当方のサーバーに永続的に保存されることはありません。</li>
+              <li>プロンプトの入力履歴は、ユーザーの端末内（Room Database）に保存され、アプリ内で再利用できます。アカウント削除時に自動的に消去されます。</li>
             </ol>
           </section>
 
@@ -276,7 +280,7 @@
             </ul>
           </section>
 
-          <p class="text-gray-400 dark:text-gray-500 mt-4">最終更新日: 2026年2月3日<br />施行日: 2026年2月3日</p>
+          <p class="text-gray-400 dark:text-gray-500 mt-4">最終更新日: 2026年3月4日<br />施行日: 2026年2月3日</p>
         </div>
       </div>
     </div>
