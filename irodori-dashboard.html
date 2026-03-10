@@ -286,10 +286,129 @@
             color: #ef4444;
         }
 
+        /* Announcement Section */
+        .announcement-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 10px 12px;
+            background: #0a0a0a;
+            border: 1px solid #333;
+            border-radius: 6px;
+            color: #e0e0e0;
+            font-size: 14px;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: #6366f1;
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-select option {
+            background: #161616;
+        }
+
+        .post-result {
+            margin-top: 12px;
+            font-size: 13px;
+            min-height: 20px;
+        }
+
+        .post-result.success {
+            color: #22c55e;
+        }
+
+        .post-result.error {
+            color: #ef4444;
+        }
+
+        .category-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .category-badge.update {
+            background: #2d2b5e;
+            color: #a5b4fc;
+        }
+
+        .category-badge.new_feature {
+            background: #3b2f1a;
+            color: #fbbf24;
+        }
+
+        .category-badge.general {
+            background: #222;
+            color: #aaa;
+        }
+
+        .announcement-list-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .announcement-list-item .item-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+
+        .announcement-list-item .item-title {
+            font-size: 14px;
+            color: #e0e0e0;
+        }
+
+        .announcement-list-item .item-body {
+            font-size: 12px;
+            color: #888;
+            margin-top: 2px;
+            white-space: pre-wrap;
+        }
+
+        .announcement-list-item .item-time {
+            font-size: 11px;
+            color: #555;
+            margin-top: 4px;
+        }
+
         @media (max-width: 768px) {
 
             .charts-grid,
-            .bottom-grid {
+            .bottom-grid,
+            .announcement-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -376,6 +495,36 @@
                     <canvas id="model-chart"></canvas>
                 </div>
             </div>
+            <!-- Announcement Management -->
+            <div class="announcement-grid">
+                <div class="chart-card">
+                    <h3>お知らせ投稿</h3>
+                    <div class="form-group">
+                        <label>タイトル</label>
+                        <input type="text" id="ann-title" class="form-input" placeholder="お知らせタイトル">
+                    </div>
+                    <div class="form-group">
+                        <label>本文</label>
+                        <textarea id="ann-body" class="form-textarea" rows="4" placeholder="お知らせ本文"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>カテゴリ</label>
+                        <select id="ann-category" class="form-select">
+                            <option value="update">アップデート</option>
+                            <option value="new_feature">新機能</option>
+                            <option value="general">一般</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" id="ann-submit-btn" onclick="postAnnouncement()">投稿する</button>
+                    <div class="post-result" id="post-result"></div>
+                </div>
+                <div class="chart-card">
+                    <h3>投稿済みお知らせ</h3>
+                    <div id="announcement-list">
+                        <div style="color:#666;padding:16px;text-align:center;">読み込み中...</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -384,6 +533,7 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
         import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
         import { getFirestore, doc, getDoc, collection, getDocs, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+        import { getFunctions, httpsCallable } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-functions.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyClkSF83XsRMZpyL3m7uZTI9CP_lOloFfA",
@@ -397,6 +547,7 @@
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
         const db = getFirestore(app);
+        const functions = getFunctions(app, "asia-northeast1");
 
         // 管理者UIDホワイトリスト（あなたのFirebase Auth UIDを追加）
         const ADMIN_UIDS = ["oTLfaPCcKWM4Atuzpy3shIzt3qD3"];
@@ -446,7 +597,7 @@
         window.refreshData = async () => {
             document.getElementById("last-updated").textContent = "読み込み中...";
             try {
-                await Promise.all([loadOverview(), loadDailyData(), loadPresetRanking()]);
+                await Promise.all([loadOverview(), loadDailyData(), loadPresetRanking(), loadAnnouncements()]);
                 document.getElementById("last-updated").textContent = "最終更新: " + new Date().toLocaleString("ja-JP");
             } catch (e) {
                 console.error("Data load error:", e);
@@ -600,6 +751,109 @@
                     }
                 }
             });
+        }
+
+        // Announcement posting
+        window.postAnnouncement = async () => {
+            const titleEl = document.getElementById("ann-title");
+            const bodyEl = document.getElementById("ann-body");
+            const categoryEl = document.getElementById("ann-category");
+            const submitBtn = document.getElementById("ann-submit-btn");
+            const resultEl = document.getElementById("post-result");
+
+            const title = titleEl.value.trim();
+            const body = bodyEl.value.trim();
+            const category = categoryEl.value;
+
+            if (!title || !body) {
+                resultEl.textContent = "タイトルと本文を入力してください";
+                resultEl.className = "post-result error";
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = "投稿中...";
+            resultEl.textContent = "";
+
+            try {
+                const createAnnouncement = httpsCallable(functions, "createAnnouncement");
+                const result = await createAnnouncement({ title, body, category });
+
+                if (result.data.success) {
+                    resultEl.textContent = "お知らせを投稿しました（プッシュ通知も送信済み）";
+                    resultEl.className = "post-result success";
+                    titleEl.value = "";
+                    bodyEl.value = "";
+                    categoryEl.value = "update";
+                    await loadAnnouncements();
+                } else {
+                    resultEl.textContent = result.data.error || "投稿に失敗しました";
+                    resultEl.className = "post-result error";
+                }
+            } catch (e) {
+                console.error("Post announcement error:", e);
+                resultEl.textContent = "エラー: " + e.message;
+                resultEl.className = "post-result error";
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = "投稿する";
+            }
+        };
+
+        // Load posted announcements
+        async function loadAnnouncements() {
+            const listEl = document.getElementById("announcement-list");
+
+            try {
+                const q = query(
+                    collection(db, "announcements"),
+                    orderBy("createdAt", "desc"),
+                    limit(10)
+                );
+                const snapshot = await getDocs(q);
+
+                if (snapshot.empty) {
+                    listEl.innerHTML = '<div style="color:#666;padding:16px;text-align:center;">お知らせはまだありません</div>';
+                    return;
+                }
+
+                const CATEGORY_LABELS = {
+                    update: "アップデート",
+                    new_feature: "新機能",
+                    general: "一般"
+                };
+
+                listEl.innerHTML = "";
+                snapshot.forEach(doc => {
+                    const data = doc.data();
+                    const cat = data.category || "general";
+                    const catLabel = CATEGORY_LABELS[cat] || cat;
+                    const createdAt = data.createdAt?.toDate
+                        ? data.createdAt.toDate().toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" })
+                        : "-";
+
+                    const item = document.createElement("div");
+                    item.className = "announcement-list-item";
+                    item.innerHTML = `
+                        <div class="item-header">
+                            <span class="category-badge ${cat}">${catLabel}</span>
+                            <span class="item-title">${escapeHtml(data.title || "")}</span>
+                        </div>
+                        <div class="item-body">${escapeHtml(data.body || "")}</div>
+                        <div class="item-time">${createdAt}</div>
+                    `;
+                    listEl.appendChild(item);
+                });
+            } catch (e) {
+                console.error("Load announcements error:", e);
+                listEl.innerHTML = '<div class="error-msg">お知らせの読み込みに失敗しました</div>';
+            }
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement("div");
+            div.textContent = text;
+            return div.innerHTML;
         }
 
         async function loadPresetRanking() {
