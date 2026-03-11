@@ -404,6 +404,80 @@
             margin-top: 4px;
         }
 
+        /* Feedback Section */
+        .feedback-section {
+            margin-top: 24px;
+        }
+
+        .feedback-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .feedback-filters {
+            display: flex;
+            gap: 8px;
+        }
+
+        .filter-btn {
+            padding: 4px 12px;
+            border: 1px solid #333;
+            border-radius: 16px;
+            background: transparent;
+            color: #888;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-btn.active {
+            background: #6366f1;
+            border-color: #6366f1;
+            color: #fff;
+        }
+
+        .feedback-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .feedback-item .fb-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+
+        .feedback-item .fb-message {
+            font-size: 14px;
+            color: #e0e0e0;
+            white-space: pre-wrap;
+            line-height: 1.5;
+        }
+
+        .feedback-item .fb-meta {
+            font-size: 11px;
+            color: #555;
+            margin-top: 6px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .fb-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .fb-badge.bug { background: #3b1520; color: #f87171; }
+        .fb-badge.feature { background: #1e3a5f; color: #60a5fa; }
+        .fb-badge.impression { background: #1a3a2a; color: #4ade80; }
+        .fb-badge.other { background: #222; color: #aaa; }
+
         @media (max-width: 768px) {
 
             .charts-grid,
@@ -495,6 +569,25 @@
                     <canvas id="model-chart"></canvas>
                 </div>
             </div>
+            <!-- Feedback Section -->
+            <div class="feedback-section">
+                <div class="chart-card">
+                    <div class="feedback-header">
+                        <h3 style="margin-bottom:0;">フィードバック</h3>
+                        <div class="feedback-filters">
+                            <button class="filter-btn active" onclick="filterFeedback('all')">すべて</button>
+                            <button class="filter-btn" onclick="filterFeedback('bug')">バグ</button>
+                            <button class="filter-btn" onclick="filterFeedback('feature')">要望</button>
+                            <button class="filter-btn" onclick="filterFeedback('impression')">感想</button>
+                            <button class="filter-btn" onclick="filterFeedback('other')">その他</button>
+                        </div>
+                    </div>
+                    <div id="feedback-list">
+                        <div style="color:#666;padding:16px;text-align:center;">読み込み中...</div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Announcement Management -->
             <div class="announcement-grid">
                 <div class="chart-card">
@@ -598,7 +691,7 @@
         window.refreshData = async () => {
             document.getElementById("last-updated").textContent = "読み込み中...";
             try {
-                await Promise.all([loadOverview(), loadDailyData(), loadPresetRanking(), loadAnnouncements()]);
+                await Promise.all([loadOverview(), loadDailyData(), loadPresetRanking(), loadAnnouncements(), loadFeedback()]);
                 document.getElementById("last-updated").textContent = "最終更新: " + new Date().toLocaleString("ja-JP");
             } catch (e) {
                 console.error("Data load error:", e);
@@ -893,6 +986,84 @@
                 tbody.innerHTML = "<tr><td colspan='3' class='error-msg'>読み込みエラー</td></tr>";
             }
         }
+        // Feedback
+        const FEEDBACK_CATEGORY_LABELS = {
+            bug: "バグ報告",
+            feature: "機能要望",
+            impression: "感想",
+            other: "その他"
+        };
+
+        let allFeedback = [];
+        let currentFeedbackFilter = "all";
+
+        async function loadFeedback() {
+            const listEl = document.getElementById("feedback-list");
+
+            try {
+                const q = query(
+                    collection(db, "feedback"),
+                    orderBy("createdAt", "desc"),
+                    limit(50)
+                );
+                const snapshot = await getDocs(q);
+
+                allFeedback = [];
+                snapshot.forEach(d => {
+                    allFeedback.push({ id: d.id, ...d.data() });
+                });
+
+                renderFeedback();
+            } catch (e) {
+                console.error("Load feedback error:", e);
+                listEl.innerHTML = '<div class="error-msg">フィードバックの読み込みに失敗しました</div>';
+            }
+        }
+
+        function renderFeedback() {
+            const listEl = document.getElementById("feedback-list");
+            const filtered = currentFeedbackFilter === "all"
+                ? allFeedback
+                : allFeedback.filter(f => f.category === currentFeedbackFilter);
+
+            if (filtered.length === 0) {
+                listEl.innerHTML = '<div style="color:#666;padding:16px;text-align:center;">フィードバックはまだありません</div>';
+                return;
+            }
+
+            listEl.innerHTML = filtered.map(f => {
+                const cat = f.category || "other";
+                const catLabel = FEEDBACK_CATEGORY_LABELS[cat] || cat;
+                const createdAt = f.createdAt?.toDate
+                    ? f.createdAt.toDate().toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" })
+                    : "-";
+                const device = [f.deviceModel, f.androidVersion ? "Android " + f.androidVersion : ""].filter(Boolean).join(" / ");
+                const version = f.appVersion ? "v" + f.appVersion : "";
+
+                return `<div class="feedback-item">
+                    <div class="fb-header">
+                        <span class="fb-badge ${cat}">${escapeHtml(catLabel)}</span>
+                        <span style="font-size:12px;color:#666;">${escapeHtml(f.userEmail || "匿名")}</span>
+                    </div>
+                    <div class="fb-message">${escapeHtml(f.message || "")}</div>
+                    <div class="fb-meta">
+                        <span>${createdAt}</span>
+                        ${device ? `<span>${escapeHtml(device)}</span>` : ""}
+                        ${version ? `<span>${escapeHtml(version)}</span>` : ""}
+                    </div>
+                </div>`;
+            }).join("");
+        }
+
+        window.filterFeedback = (category) => {
+            currentFeedbackFilter = category;
+            document.querySelectorAll(".feedback-filters .filter-btn").forEach(btn => {
+                btn.classList.toggle("active", btn.textContent === {
+                    all: "すべて", bug: "バグ", feature: "要望", impression: "感想", other: "その他"
+                }[category]);
+            });
+            renderFeedback();
+        };
     </script>
 </body>
 
