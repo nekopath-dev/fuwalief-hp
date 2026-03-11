@@ -529,6 +529,7 @@
     </div>
 
     <!-- Firebase SDK -->
+    <!-- NOTE: Firebase APIキーは公開前提の識別子です。セキュリティはFirestoreルール + Auth + APIキー制限で守っています -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
         import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
@@ -536,7 +537,7 @@
         import { getFunctions, httpsCallable } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-functions.js";
 
         const firebaseConfig = {
-            apiKey: "AIzaSyClkSF83XsRMZpyL3m7uZTI9CP_lOloFfA",
+            apiKey: "AIzaSyAGjeNntw-gHFXxT1p4DB5cmQdJhzz0jDE",
             authDomain: "dynamic-wallpaper-8a815.firebaseapp.com",
             projectId: "dynamic-wallpaper-8a815",
             storageBucket: "dynamic-wallpaper-8a815.firebasestorage.app",
@@ -549,7 +550,7 @@
         const db = getFirestore(app);
         const functions = getFunctions(app, "asia-northeast1");
 
-        // 管理者UIDホワイトリスト（あなたのFirebase Auth UIDを追加）
+        // 管理者UIDホワイトリスト
         const ADMIN_UIDS = ["oTLfaPCcKWM4Atuzpy3shIzt3qD3"];
 
         let dailyChart = null;
